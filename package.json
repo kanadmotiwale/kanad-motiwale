@@ -1,7 +1,7 @@
 {
-  "name": "personal-homepage",
+  "name": "kanad-personal-homepage",
   "version": "1.0.0",
-  "description": "Personal homepage built with vanilla HTML, CSS, and ES6+ JavaScript showcasing web development skills and projects",
+  "description": "Personal homepage showcasing my software engineering journey",
   "type": "module",
   "main": "index.html",
   "scripts": {
@@ -11,41 +11,37 @@
     "lint:fix": "eslint js/**/*.js --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "validate": "html-validate *.html",
-    "build": "echo 'No build step required for static site'",
-    "deploy": "echo 'Ready for deployment to GitHub Pages, Netlify, or Vercel'"
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "echo 'Ready to deploy to GitHub Pages'"
   },
   "keywords": [
     "portfolio",
-    "homepage",
-    "web-development",
-    "html",
-    "css",
-    "javascript",
-    "es6",
-    "responsive",
     "personal-website",
-    "student-project"
+    "software-engineer",
+    "full-stack-developer",
+    "javascript",
+    "node.js",
+    "java",
+    "web-development"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com",
-    "url": "https://yourusername.github.io"
+    "name": "Kanad Motiwale",
+    "email": "motiwale.k@northeastern.edu",
+    "url": "https://kanadmotiwale.github.io"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/personal-homepage.git"
+    "url": "https://github.com/kanadmotiwale/personal-homepage.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/personal-homepage/issues"
+    "url": "https://github.com/kanadmotiwale/personal-homepage/issues"
   },
-  "homepage": "https://yourusername.github.io/personal-homepage",
+  "homepage": "https://kanadmotiwale.github.io/personal-homepage",
   "devDependencies": {
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "live-server": "^1.2.2",
-    "html-validate": "^8.15.0"
+    "live-server": "^1.2.2"
   },
   "browserslist": [
     "> 1%",

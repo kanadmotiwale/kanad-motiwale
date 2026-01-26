@@ -1,136 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Your Name">
-    <meta name="description" content="AI-generated content about modern web development trends and best practices">
-    <meta name="keywords" content="web development, AI, trends, best practices, future">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <title>Future of Web Development - AI Generated</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<header class="header">
-    <nav class="nav">
-        <div class="nav-brand">Your Name</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Kanad Motiwale" />
+    <meta
+      name="description"
+      content="My thoughts on where web development is heading in 2026 and beyond"
+    />
+    <meta
+      name="keywords"
+      content="web development, technology trends, software engineering, future"
+    />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <title>Where Web Dev is Going - Kanad Motiwale</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">Kanad Motiwale</div>
         <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="projects.html" class="nav-link">Projects</a></li>
-            <li><a href="ai-generated.html" class="nav-link active">AI Page</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li>
+            <a href="ai-generated.html" class="nav-link active"
+              >Tech Insights</a
+            >
+          </li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<main class="main-content">
-    <section class="page-hero">
+    <main class="main-content">
+      <section class="page-hero">
         <div class="container">
-            <h1 class="page-title">The Future of Web Development</h1>
-            <p class="page-subtitle">AI-Generated Insights and Trends</p>
-            <div class="ai-badge">
-                <span>🤖 This content was generated using Claude AI</span>
+          <h1 class="page-title">Where Web Development is Heading</h1>
+          <p class="page-subtitle">
+            My take on the trends shaping our industry
+          </p>
+          <div class="ai-badge">
+            <span
+              >🤖 Written with help from Claude AI, but the opinions are
+              mine</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="ai-content">
+        <div class="container">
+          <article class="ai-article">
+            <h2>The Stuff That's Actually Changing How We Build</h2>
+
+            <p>
+              Working in the industry for a couple years now, I've seen how fast
+              things move in web development. What was cutting-edge two years
+              ago is now just standard practice. Here's what I think is actually
+              going to matter in the next few years, not just the hype.
+            </p>
+
+            <h3>AI Tools Are Getting Really Good</h3>
+            <p>
+              Look, I'm not going to pretend AI is going to replace developers.
+              But the coding assistants we have now? They're actually useful.
+              GitHub Copilot has saved me hours on boilerplate code, and tools
+              like ChatGPT are great for rubber duck debugging. The trick is
+              knowing when to trust them and when to think for yourself.
+            </p>
+            <p>
+              What's interesting is how this is changing the skill mix we need.
+              Writing code is getting easier, but understanding architecture,
+              debugging complex systems, and making good design decisions is
+              becoming more important.
+            </p>
+
+            <h3>WebAssembly is Finally Happening</h3>
+            <p>
+              I remember when WASM was this cool experimental thing that
+              everyone talked about but nobody actually used. That's changing
+              fast. Being able to run Rust, C++, or Go code in the browser at
+              near-native speed opens up possibilities that were impossible
+              before.
+            </p>
+            <p>
+              The performance gains are real. I've seen web apps that used to
+              struggle with heavy computations now handle them smoothly thanks
+              to WASM modules. It's not going to replace JavaScript, but it's
+              giving us options we didn't have before.
+            </p>
+
+            <h3>The Micro-Frontend Thing Is Getting Traction</h3>
+            <p>
+              At LTIMindtree, we dealt with some massive frontend applications
+              that were nightmares to maintain. Different teams working on the
+              same codebase, deployment bottlenecks, the usual enterprise
+              problems. Micro-frontends solve a lot of this by letting teams
+              work independently while still delivering a cohesive user
+              experience.
+            </p>
+            <p>
+              It's not a silver bullet though. The complexity moves from your
+              codebase to your infrastructure. But for big teams building big
+              applications, it's starting to make a lot of sense.
+            </p>
+
+            <h3>Edge Computing is Changing the Game</h3>
+            <p>
+              This one's huge. Moving computation closer to users isn't just
+              about speed anymore, it's about building applications that work
+              differently. With edge functions, you can run backend logic in
+              dozens of locations worldwide, making truly global applications
+              that feel local everywhere.
+            </p>
+            <p>
+              I've been experimenting with Cloudflare Workers and Vercel Edge
+              Functions, and the possibilities are pretty exciting. You start
+              thinking about data differently when your function can run
+              anywhere.
+            </p>
+
+            <h2>What This Means for How We Build Things</h2>
+
+            <div class="best-practices-grid">
+              <div class="practice-card">
+                <h4>Performance Isn't Optional</h4>
+                <p>
+                  Core Web Vitals are now part of search rankings. Users expect
+                  fast, and businesses are starting to understand that slow
+                  equals lost revenue.
+                </p>
+              </div>
+
+              <div class="practice-card">
+                <h4>Accessibility from the Start</h4>
+                <p>
+                  It's not something you bolt on later anymore. Screen readers,
+                  keyboard navigation, color contrast - it all needs to be part
+                  of the initial design.
+                </p>
+              </div>
+
+              <div class="practice-card">
+                <h4>Security is Everyone's Job</h4>
+                <p>
+                  With all these new attack vectors, you can't just leave
+                  security to the security team. Every developer needs to
+                  understand the basics.
+                </p>
+              </div>
+
+              <div class="practice-card">
+                <h4>Mobile Still Rules</h4>
+                <p>
+                  Most of your users are on phones. Design for mobile first,
+                  then figure out how it scales up to desktop.
+                </p>
+              </div>
+
+              <div class="practice-card">
+                <h4>The Environment Matters</h4>
+                <p>
+                  Writing efficient code isn't just about performance anymore.
+                  Energy consumption from data centers is becoming a real
+                  consideration.
+                </p>
+              </div>
+
+              <div class="practice-card">
+                <h4>Keep Learning</h4>
+                <p>
+                  The half-life of web development knowledge keeps getting
+                  shorter. The tools I used two years ago are already outdated.
+                </p>
+              </div>
             </div>
+
+            <h2>Framework Fatigue is Real</h2>
+            <p>
+              Everyone's tired of the constant churn in JavaScript frameworks.
+              React is still dominant, Vue and Angular are solid choices, and
+              Svelte is growing fast. But honestly? The framework matters less
+              than understanding the underlying principles.
+            </p>
+            <p>
+              Pick something stable, learn it well, and focus on building good
+              software. The patterns you learn in one framework usually transfer
+              to others.
+            </p>
+
+            <h2>Where I Think We're Heading</h2>
+            <p>
+              The future of web development isn't about any single technology.
+              It's about building applications that are fast, accessible,
+              secure, and maintainable. The tools will keep changing, but those
+              fundamentals stay the same.
+            </p>
+            <p>
+              What excites me most is how the barrier to building powerful
+              applications keeps getting lower. A small team can now build and
+              deploy global applications that would have required massive
+              infrastructure teams just a few years ago.
+            </p>
+            <p>
+              The challenge isn't technical capabilities anymore - it's using
+              these tools wisely to build software that actually helps people
+              solve real problems.
+            </p>
+
+            <div class="ai-disclaimer">
+              <p>
+                <strong>Note:</strong> I wrote this with assistance from Claude
+                AI to meet a course requirement for AI-generated content. The
+                perspectives and opinions reflect my experiences in the
+                industry, but the AI helped with structure and articulation.
+              </p>
+            </div>
+          </article>
         </div>
-    </section>
+      </section>
+    </main>
 
-    <section class="ai-content">
-        <div class="container">
-            <article class="ai-article">
-                <h2>Emerging Technologies Shaping Web Development</h2>
-
-                <p>
-                    The landscape of web development continues to evolve at an unprecedented pace, driven by technological advancements and changing user expectations. As we advance through 2026, several key trends are reshaping how we build and interact with web applications.
-                </p>
-
-                <h3>1. AI-Powered Development Tools</h3>
-                <p>
-                    Artificial intelligence has revolutionized the development workflow. Code completion tools, automated testing frameworks, and AI-assisted debugging are becoming standard in modern development environments. These tools don't replace developers but rather augment their capabilities, allowing them to focus on higher-level problem-solving and creative solutions.
-                </p>
-
-                <h3>2. WebAssembly (WASM) Mainstream Adoption</h3>
-                <p>
-                    WebAssembly has moved beyond experimental status to become a crucial technology for high-performance web applications. By enabling languages like Rust, C++, and Go to run efficiently in browsers, WASM opens new possibilities for complex applications that were previously limited to native development.
-                </p>
-
-                <h3>3. Progressive Web Apps (PWA) Evolution</h3>
-                <p>
-                    Progressive Web Apps continue to bridge the gap between web and native applications. With improved capabilities for offline functionality, push notifications, and device integration, PWAs offer a compelling alternative to traditional mobile app development while maintaining the accessibility and reach of web platforms.
-                </p>
-
-                <h3>4. Micro-Frontend Architecture</h3>
-                <p>
-                    Large organizations are increasingly adopting micro-frontend architectures to enable independent development and deployment of application modules. This approach allows teams to work autonomously while maintaining a cohesive user experience across the entire application.
-                </p>
-
-                <h3>5. Enhanced Developer Experience (DX)</h3>
-                <p>
-                    Modern development focuses heavily on developer experience, with tools like Vite, Next.js, and Nuxt.js providing lightning-fast development servers, optimized builds, and streamlined deployment processes. These improvements significantly reduce development time and improve code quality.
-                </p>
-
-                <h2>Best Practices for Modern Web Development</h2>
-
-                <div class="best-practices-grid">
-                    <div class="practice-card">
-                        <h4>Performance First</h4>
-                        <p>Optimize for Core Web Vitals, implement lazy loading, and use modern image formats to ensure fast, responsive user experiences.</p>
-                    </div>
-
-                    <div class="practice-card">
-                        <h4>Accessibility by Design</h4>
-                        <p>Build inclusive applications from the ground up with proper semantic HTML, keyboard navigation, and screen reader compatibility.</p>
-                    </div>
-
-                    <div class="practice-card">
-                        <h4>Security-First Approach</h4>
-                        <p>Implement Content Security Policies, use HTTPS everywhere, and follow OWASP guidelines to protect user data and application integrity.</p>
-                    </div>
-
-                    <div class="practice-card">
-                        <h4>Mobile-First Design</h4>
-                        <p>Design for mobile devices first, then progressively enhance for larger screens to ensure optimal experiences across all devices.</p>
-                    </div>
-
-                    <div class="practice-card">
-                        <h4>Sustainable Coding</h4>
-                        <p>Write efficient code that minimizes energy consumption and reduces the carbon footprint of digital applications.</p>
-                    </div>
-
-                    <div class="practice-card">
-                        <h4>Continuous Learning</h4>
-                        <p>Stay updated with rapidly evolving web standards, browser capabilities, and emerging technologies through continuous education.</p>
-                    </div>
-                </div>
-
-                <h2>The Role of JavaScript Frameworks</h2>
-                <p>
-                    While the JavaScript ecosystem continues to expand, the focus has shifted from proliferation to consolidation. React, Vue, and Angular remain dominant, but new frameworks like Svelte and Solid.js are gaining traction by offering improved performance and developer experience. The key is choosing the right tool for each project's specific requirements rather than following trends blindly.
-                </p>
-
-                <h2>Conclusion</h2>
-                <p>
-                    The future of web development lies in balancing innovation with stability, performance with features, and automation with human creativity. As developers, our role is to harness these emerging technologies while never losing sight of the fundamental goal: creating meaningful, accessible, and valuable experiences for users around the world.
-                </p>
-
-                <div class="ai-disclaimer">
-                    <p><strong>Note:</strong> This content was generated using Claude AI to demonstrate AI-generated web content as part of a web development assignment. The insights reflect current trends and best practices in the field as of 2026.</p>
-                </div>
-            </article>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2026 Kanad Motiwale. Built with vanilla HTML, CSS, and
+          JavaScript.
+        </p>
         <div class="social-links">
-            <a href="https://github.com/yourusername" class="social-link" aria-label="GitHub Profile">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" class="social-link" aria-label="LinkedIn Profile">LinkedIn</a>
-            <a href="mailto:your.email@example.com" class="social-link" aria-label="Email Contact">Email</a>
+          <a
+            href="https://github.com/kanadmotiwale"
+            class="social-link"
+            aria-label="GitHub Profile"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/kanadmotiwale"
+            class="social-link"
+            aria-label="LinkedIn Profile"
+            >LinkedIn</a
+          >
+          <a
+            href="mailto:motiwale.k@northeastern.edu"
+            class="social-link"
+            aria-label="Email Contact"
+            >Email</a
+          >
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<script type="module" src="js/main.js"></script>
-</body>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>

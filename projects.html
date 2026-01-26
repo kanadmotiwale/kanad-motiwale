@@ -1,237 +1,336 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Your Name">
-    <meta name="description" content="Portfolio of web development projects by Your Name - HTML, CSS, JavaScript applications">
-    <meta name="keywords" content="portfolio, projects, web development, HTML, CSS, JavaScript">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <title>Projects - Your Name</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<header class="header">
-    <nav class="nav">
-        <div class="nav-brand">Your Name</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Kanad Motiwale" />
+    <meta
+      name="description"
+      content="Portfolio of projects by Kanad Motiwale - from ed-tech platforms to enterprise systems"
+    />
+    <meta
+      name="keywords"
+      content="portfolio, projects, software development, full stack, backend"
+    />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <title>Projects - Kanad Motiwale</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">Kanad Motiwale</div>
         <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="projects.html" class="nav-link active">Projects</a></li>
-            <li><a href="ai-generated.html" class="nav-link">AI Page</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li>
+            <a href="ai-generated.html" class="nav-link">Tech Insights</a>
+          </li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<main class="main-content">
-    <section class="page-hero">
+    <main class="main-content">
+      <section class="page-hero">
         <div class="container">
-            <h1 class="page-title">My Projects</h1>
-            <p class="page-subtitle">A showcase of my web development work</p>
+          <h1 class="page-title">Things I've Built</h1>
+          <p class="page-subtitle">From startups to enterprise systems</p>
         </div>
-    </section>
+      </section>
 
-    <section class="projects-filter">
+      <section class="projects-filter">
         <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-            </div>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">
+              Everything
+            </button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="backend">
+              Backend Systems
+            </button>
+            <button class="filter-btn" data-filter="fullstack">
+              Full Stack
+            </button>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section class="projects-gallery">
+      <section class="projects-gallery">
         <div class="container">
-            <div class="projects-grid-detailed">
-
-                <article class="project-card-detailed" data-category="web frontend">
-                    <div class="project-image-container">
-                        <img src="images/project1.jpg" alt="E-commerce Website - Product listing and shopping cart interface" class="project-image-detailed">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link-btn">Live Demo</a>
-                                <a href="#" class="project-link-btn">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content-detailed">
-                        <h3 class="project-title-detailed">E-commerce Website</h3>
-                        <p class="project-description-detailed">
-                            A fully responsive e-commerce website featuring product catalogs, shopping cart functionality, and user authentication. Built with vanilla JavaScript and modern CSS Grid layout.
-                        </p>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Responsive design for all devices</li>
-                                <li>Interactive shopping cart</li>
-                                <li>Product search and filtering</li>
-                                <li>Local storage for cart persistence</li>
-                            </ul>
-                        </div>
-                        <div class="project-tech-detailed">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript ES6</span>
-                            <span class="tech-tag">CSS Grid</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card-detailed" data-category="web fullstack">
-                    <div class="project-image-container">
-                        <img src="images/project2.jpg" alt="Task Manager App - Dashboard with task lists and progress tracking" class="project-image-detailed">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link-btn">Live Demo</a>
-                                <a href="#" class="project-link-btn">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content-detailed">
-                        <h3 class="project-title-detailed">Task Manager Application</h3>
-                        <p class="project-description-detailed">
-                            A comprehensive task management application with user authentication, project organization, and real-time updates. Features drag-and-drop functionality and progress tracking.
-                        </p>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>User authentication system</li>
-                                <li>Drag and drop task organization</li>
-                                <li>Progress tracking and analytics</li>
-                                <li>Real-time collaboration</li>
-                            </ul>
-                        </div>
-                        <div class="project-tech-detailed">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Socket.io</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card-detailed" data-category="web frontend">
-                    <div class="project-image-container">
-                        <img src="images/project3.jpg" alt="Weather Dashboard - Current weather display with forecast charts" class="project-image-detailed">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link-btn">Live Demo</a>
-                                <a href="#" class="project-link-btn">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content-detailed">
-                        <h3 class="project-title-detailed">Weather Dashboard</h3>
-                        <p class="project-description-detailed">
-                            An interactive weather application that provides real-time weather data, 7-day forecasts, and location-based weather alerts using external APIs.
-                        </p>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Real-time weather data</li>
-                                <li>7-day forecast display</li>
-                                <li>Geolocation integration</li>
-                                <li>Interactive weather maps</li>
-                            </ul>
-                        </div>
-                        <div class="project-tech-detailed">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Weather API</span>
-                            <span class="tech-tag">Chart.js</span>
-                            <span class="tech-tag">CSS3</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card-detailed" data-category="frontend">
-                    <div class="project-image-container">
-                        <img src="images/project4.jpg" alt="Portfolio Website - Modern design with smooth animations" class="project-image-detailed">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link-btn">Live Demo</a>
-                                <a href="#" class="project-link-btn">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content-detailed">
-                        <h3 class="project-title-detailed">Interactive Portfolio</h3>
-                        <p class="project-description-detailed">
-                            A modern portfolio website showcasing advanced CSS animations, smooth scrolling effects, and interactive elements built with vanilla JavaScript.
-                        </p>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Smooth scroll navigation</li>
-                                <li>CSS Grid and Flexbox layouts</li>
-                                <li>Animated skill bars</li>
-                                <li>Contact form validation</li>
-                            </ul>
-                        </div>
-                        <div class="project-tech-detailed">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">GSAP</span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="skills-summary">
-        <div class="container">
-            <h2>Technologies I Use</h2>
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <h3>Frontend</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">HTML5</span>
-                        <span class="tech-item">CSS3</span>
-                        <span class="tech-item">JavaScript ES6+</span>
-                        <span class="tech-item">React</span>
-                        <span class="tech-item">Vue.js</span>
-                    </div>
+          <div class="projects-grid-detailed">
+            <article
+              class="project-card-detailed"
+              data-category="web fullstack"
+            >
+              <div class="project-image-container">
+                <img
+                  src="images/fastfindfirm.jpg"
+                  alt="FastFindFirm platform dashboard showing user analytics"
+                  class="project-image-detailed"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link-btn">Case Study</a>
+                    <a
+                      href="https://github.com/kanadmotiwale"
+                      class="project-link-btn"
+                      >GitHub</a
+                    >
+                  </div>
                 </div>
-                <div class="tech-category">
-                    <h3>Backend</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">Node.js</span>
-                        <span class="tech-item">Express.js</span>
-                        <span class="tech-item">Python</span>
-                        <span class="tech-item">MongoDB</span>
-                        <span class="tech-item">PostgreSQL</span>
-                    </div>
+              </div>
+              <div class="project-content-detailed">
+                <h3 class="project-title-detailed">
+                  FastFindFirm Ed-tech Platform
+                </h3>
+                <p class="project-description-detailed">
+                  This was my crash course in building a real product from
+                  scratch. Started as an idea between me and my co-founder,
+                  ended up serving over 5,000 students. I built the entire
+                  backend infrastructure and learned what it really means to
+                  write code that scales.
+                </p>
+                <div class="project-features">
+                  <h4>What made this challenging:</h4>
+                  <ul>
+                    <li>Had to design for growth from day one</li>
+                    <li>Built real-time analytics that actually worked</li>
+                    <li>Created automated pipelines that saved us hours</li>
+                    <li>Improved operational efficiency by 40%</li>
+                  </ul>
                 </div>
-                <div class="tech-category">
-                    <h3>Tools</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">Git</span>
-                        <span class="tech-item">GitHub</span>
-                        <span class="tech-item">VS Code</span>
-                        <span class="tech-item">Figma</span>
-                        <span class="tech-item">Docker</span>
-                    </div>
+                <div class="project-tech-detailed">
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">Microservices</span>
+                  <span class="tech-tag">Analytics</span>
                 </div>
-            </div>
-        </div>
-    </section>
-</main>
+              </div>
+            </article>
 
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
+            <article class="project-card-detailed" data-category="web backend">
+              <div class="project-image-container">
+                <img
+                  src="images/project2.jpg"
+                  alt="Policy and placement management workflow interface"
+                  class="project-image-detailed"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link-btn">Live Demo</a>
+                    <a
+                      href="https://github.com/kanadmotiwale"
+                      class="project-link-btn"
+                      >GitHub</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-content-detailed">
+                <h3 class="project-title-detailed">
+                  Policy & Placement Management Platform
+                </h3>
+                <p class="project-description-detailed">
+                  Built this at LTIMindtree to handle policy and placement
+                  workflows. The existing system was completely manual, so we
+                  automated the whole thing and cut operations time by 40%. Used
+                  the MEAN stack and learned a lot about database design along
+                  the way.
+                </p>
+                <div class="project-features">
+                  <h4>Key challenges solved:</h4>
+                  <ul>
+                    <li>Designed RESTful APIs that made sense</li>
+                    <li>Optimized database queries for performance</li>
+                    <li>Built workflow automation that actually worked</li>
+                    <li>Ensured data integrity at scale</li>
+                  </ul>
+                </div>
+                <div class="project-tech-detailed">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Angular</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">MEAN Stack</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card-detailed" data-category="backend">
+              <div class="project-image-container">
+                <img
+                  src="images/project3.png"
+                  alt="Java calendar application showing multiple interface modes"
+                  class="project-image-detailed"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link-btn">Demo</a>
+                    <a
+                      href="https://github.com/kanadmotiwale"
+                      class="project-link-btn"
+                      >GitHub</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-content-detailed">
+                <h3 class="project-title-detailed">
+                  Java Calendar Application
+                </h3>
+                <p class="project-description-detailed">
+                  This was for a course project, but I got really into it. Built
+                  a calendar app that works three different ways - GUI for
+                  regular users, command line for power users, and headless for
+                  automation. The MVC architecture I implemented here is
+                  probably some of my cleanest Java code.
+                </p>
+                <div class="project-features">
+                  <h4>What I'm proud of:</h4>
+                  <ul>
+                    <li>Clean MVC separation that actually works</li>
+                    <li>Three different interfaces, one codebase</li>
+                    <li>Handles time zones and recurring events properly</li>
+                    <li>Comprehensive JUnit tests for everything</li>
+                  </ul>
+                </div>
+                <div class="project-tech-detailed">
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">MVC Pattern</span>
+                  <span class="tech-tag">JUnit</span>
+                  <span class="tech-tag">Swing GUI</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-card-detailed"
+              data-category="fullstack web"
+            >
+              <div class="project-image-container">
+                <img
+                  src="images/project4"
+                  alt="License plate recognition system interface"
+                  class="project-image-detailed"
+                />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" class="project-link-btn">Case Study</a>
+                    <a
+                      href="https://github.com/kanadmotiwale"
+                      class="project-link-btn"
+                      >GitHub</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-content-detailed">
+                <h3 class="project-title-detailed">
+                  Gate Control with License Plate Recognition
+                </h3>
+                <p class="project-description-detailed">
+                  Started this as a final year project but got carried away with
+                  making it actually work in real-time. The computer vision part
+                  was fun, but the real challenge was building a backend that
+                  could process images fast enough to be useful for actual gate
+                  control.
+                </p>
+                <div class="project-features">
+                  <h4>Technical highlights:</h4>
+                  <ul>
+                    <li>Real-time image processing that doesn't lag</li>
+                    <li>REST APIs designed for low latency</li>
+                    <li>Modular design for easy feature additions</li>
+                    <li>Python backend with Angular frontend</li>
+                  </ul>
+                </div>
+                <div class="project-tech-detailed">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Angular</span>
+                  <span class="tech-tag">OpenCV</span>
+                  <span class="tech-tag">SQL</span>
+                  <span class="tech-tag">Computer Vision</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-summary">
+        <div class="container">
+          <h2>Technologies I Work With</h2>
+          <div class="tech-categories">
+            <div class="tech-category">
+              <h3>Backend & APIs</h3>
+              <div class="tech-list">
+                <span class="tech-item">Node.js</span>
+                <span class="tech-item">Java</span>
+                <span class="tech-item">Python</span>
+                <span class="tech-item">REST APIs</span>
+                <span class="tech-item">Microservices</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h3>Databases & Storage</h3>
+              <div class="tech-list">
+                <span class="tech-item">PostgreSQL</span>
+                <span class="tech-item">MongoDB</span>
+                <span class="tech-item">MySQL</span>
+                <span class="tech-item">Redis</span>
+                <span class="tech-item">AWS S3</span>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h3>Cloud & DevOps</h3>
+              <div class="tech-list">
+                <span class="tech-item">AWS Lambda</span>
+                <span class="tech-item">EC2</span>
+                <span class="tech-item">Docker</span>
+                <span class="tech-item">Jenkins</span>
+                <span class="tech-item">Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2026 Kanad Motiwale. Built with vanilla HTML, CSS, and
+          JavaScript.
+        </p>
         <div class="social-links">
-            <a href="https://github.com/yourusername" class="social-link" aria-label="GitHub Profile">GitHub</a>
-            <a href="https://linkedin.com/in/yourusername" class="social-link" aria-label="LinkedIn Profile">LinkedIn</a>
-            <a href="mailto:your.email@example.com" class="social-link" aria-label="Email Contact">Email</a>
+          <a
+            href="https://github.com/kanadmotiwale"
+            class="social-link"
+            aria-label="GitHub Profile"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/kanadmotiwale"
+            class="social-link"
+            aria-label="LinkedIn Profile"
+            >LinkedIn</a
+          >
+          <a
+            href="mailto:motiwale.k@northeastern.edu"
+            class="social-link"
+            aria-label="Email Contact"
+            >Email</a
+          >
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<script type="module" src="js/main.js"></script>
-</body>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>

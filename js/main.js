@@ -1,133 +1,120 @@
-// Main JavaScript file - ES6 Module
-import { animateSkillBars, observeSkillsSection } from './features.js';
-import { initializeProjectFilter } from './utils.js';
+import { animateSkillBars, observeSkillsSection } from "./features.js";
+import { initializeProjectFilter } from "./utils.js";
 
-// DOM Content Loaded Event Listener
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Personal Homepage loaded successfully!');
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Homepage loaded successfully!");
 
-    // Initialize all features
-    initializeNavigation();
-    initializeMobileMenu();
-    observeSkillsSection();
-    initializeProjectFilter();
-    initializeSmoothScrolling();
-    initializeScrollEffects();
-
-    // Add intersection observer for animations
-    initializeAnimations();
+  initializeNavigation();
+  initializeMobileMenu();
+  observeSkillsSection();
+  initializeProjectFilter();
+  initializeSmoothScrolling();
+  initializeScrollEffects();
+  initializeAnimations();
 });
 
-// Navigation functionality
 function initializeNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll(".nav-link");
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
+  navLinks.forEach((link) => {
+    const linkPath = link.getAttribute("href");
 
-        // Handle hash links for single page navigation
-        if (linkPath.startsWith('#')) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = linkPath.substring(1);
-                const targetElement = document.getElementById(targetId);
+    if (linkPath.startsWith("#")) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = linkPath.substring(1);
+        const targetElement = document.getElementById(targetId);
 
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
 
-                    // Update URL hash
-                    history.pushState(null, null, linkPath);
-                }
-            });
+          history.pushState(null, null, linkPath);
         }
+      });
+    }
 
-        // Highlight current page in navigation
-        if (linkPath === currentPage ||
-            (currentPage === 'index.html' && linkPath === '/') ||
-            (currentPage === '' && linkPath === 'index.html')) {
-            link.classList.add('active');
-        }
-    });
+    if (
+      linkPath === currentPage ||
+      (currentPage === "index.html" && linkPath === "/") ||
+      (currentPage === "" && linkPath === "index.html")
+    ) {
+      link.classList.add("active");
+    }
+  });
 }
 
-// Mobile menu functionality (for future enhancement)
 function initializeMobileMenu() {
-    const nav = document.querySelector('.nav');
-    let lastScrollY = window.scrollY;
+  const nav = document.querySelector(".nav");
+  let lastScrollY = window.scrollY;
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > lastScrollY && window.scrollY > 100) {
-            nav.style.transform = 'translateY(-100%)';
-        } else {
-            nav.style.transform = 'translateY(0)';
-        }
-        lastScrollY = window.scrollY;
-    });
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+      nav.style.transform = "translateY(-100%)";
+    } else {
+      nav.style.transform = "translateY(0)";
+    }
+    lastScrollY = window.scrollY;
+  });
 }
 
-// Smooth scrolling for all internal links
 function initializeSmoothScrolling() {
-    const links = document.querySelectorAll('a[href^="#"]');
+  const links = document.querySelectorAll('a[href^="#"]');
 
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
 
-            if (href !== '#' && href.length > 1) {
-                e.preventDefault();
-                const targetId = href.substring(1);
-                const targetElement = document.getElementById(targetId);
+      if (href !== "#" && href.length > 1) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
 
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 80; // Account for fixed header
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80;
 
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
+        }
+      }
     });
+  });
 }
 
-// Scroll effects and animations
 function initializeScrollEffects() {
-    const sections = document.querySelectorAll('section');
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '-50px 0px'
-    };
+  const sections = document.querySelectorAll("section");
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "-50px 0px",
+  };
 
-    const sectionObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('section-visible');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("section-visible");
 
-                // Trigger skill bar animation when skills section is visible
-                if (entry.target.classList.contains('skills-section')) {
-                    setTimeout(() => {
-                        animateSkillBars();
-                    }, 300);
-                }
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => {
-        sectionObserver.observe(section);
+        if (entry.target.classList.contains("skills-section")) {
+          setTimeout(() => {
+            animateSkillBars();
+          }, 300);
+        }
+      }
     });
+  }, observerOptions);
+
+  sections.forEach((section) => {
+    sectionObserver.observe(section);
+  });
 }
 
-// Initialize entrance animations
 function initializeAnimations() {
-    // Add CSS for animations
-    const style = document.createElement('style');
-    style.textContent = `
+  const style = document.createElement("style");
+  style.textContent = `
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -187,107 +174,99 @@ function initializeAnimations() {
             transform: scale(1);
         }
     `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 
-    // Apply animation classes to elements
-    const animatedElements = document.querySelectorAll('.project-card, .skill-item, .stat-item');
-    animatedElements.forEach((element, index) => {
-        setTimeout(() => {
-            element.classList.add('animate');
-        }, index * 100);
-    });
+  const animatedElements = document.querySelectorAll(
+    ".project-card, .skill-item, .stat-item",
+  );
+  animatedElements.forEach((element, index) => {
+    setTimeout(() => {
+      element.classList.add("animate");
+    }, index * 100);
+  });
 }
 
-// CTA button functionality
-const ctaButton = document.querySelector('.cta-button');
+const ctaButton = document.querySelector(".cta-button");
 if (ctaButton) {
-    ctaButton.addEventListener('click', function() {
-        const projectsSection = document.getElementById('projects');
-        if (projectsSection) {
-            projectsSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-}
-
-// Form handling (if contact forms exist)
-function initializeFormHandling() {
-    const forms = document.querySelectorAll('form');
-
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Basic form validation
-            const formData = new FormData(form);
-            let isValid = true;
-
-            for (let [key, value] of formData.entries()) {
-                if (!value.trim()) {
-                    isValid = false;
-                    break;
-                }
-            }
-
-            if (isValid) {
-                // Simulate form submission
-                const submitButton = form.querySelector('button[type="submit"]');
-                const originalText = submitButton.textContent;
-
-                submitButton.textContent = 'Sending...';
-                submitButton.disabled = true;
-
-                setTimeout(() => {
-                    submitButton.textContent = 'Message Sent!';
-                    form.reset();
-
-                    setTimeout(() => {
-                        submitButton.textContent = originalText;
-                        submitButton.disabled = false;
-                    }, 2000);
-                }, 1000);
-            }
-        });
-    });
-}
-
-// Initialize form handling if forms exist
-if (document.querySelector('form')) {
-    initializeFormHandling();
-}
-
-// Add loading animation
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-
-    // Remove any loading screens
-    const loader = document.querySelector('.loader');
-    if (loader) {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-            loader.remove();
-        }, 500);
+  ctaButton.addEventListener("click", () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
-});
+  });
+}
 
-// Error handling for images
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img');
+function initializeFormHandling() {
+  const forms = document.querySelectorAll("form");
 
-    images.forEach(img => {
-        img.addEventListener('error', function() {
-            // Create placeholder image if original fails to load
-            this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNzUgMTEwVjE5MEgyMjVWMTEwSDE3NVoiIGZpbGw9IiM5Q0E0QUYiLz4KPHA+YXRoIGQ9Ik0xOTAgMTMwQzE5MiAxMjggMTk1IDEyOCAxOTcgMTMwTDIxMCAxNDBIMTgwTDE5MCAxMzBaIiBmaWxsPSIjOUNBNEFGIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMjMwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzZCNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2UgTm90IEZvdW5kPC90ZXh0Pgo8L3N2Zz4=';
-            this.alt = 'Placeholder image - original image not found';
-        });
+  forms.forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      let isValid = true;
+
+      for (const [_key, value] of formData.entries()) {
+        if (!value.trim()) {
+          isValid = false;
+          break;
+        }
+      }
+
+      if (isValid) {
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+
+        submitButton.textContent = "Sending...";
+        submitButton.disabled = true;
+
+        setTimeout(() => {
+          submitButton.textContent = "Message Sent!";
+          form.reset();
+
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+          }, 2000);
+        }, 1000);
+      }
     });
+  });
+}
+
+if (document.querySelector("form")) {
+  initializeFormHandling();
+}
+
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+
+  const loader = document.querySelector(".loader");
+  if (loader) {
+    loader.style.opacity = "0";
+    setTimeout(() => {
+      loader.remove();
+    }, 500);
+  }
 });
 
-// Export functions for testing purposes
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll("img");
+
+  images.forEach((img) => {
+    img.addEventListener("error", function () {
+      this.src =
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNzUgMTEwVjE5MEgyMjVWMTEwSDE3NVoiIGZpbGw9IiM5Q0E0QUYiLz4KPHA+YXRoIGQ9Ik0xOTAgMTMwQzE5MiAxMjggMTk1IDEyOCAxOTcgMTMwTDIxMCAxNDBIMTgwTDE5MCAxMzBaIiBmaWxsPSIjOUNBNEFGIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMjMwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzZCNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2UgTm90IEZvdW5kPC90ZXh0Pgo8L3N2Zz4=";
+      this.alt = "Placeholder image - original image not found";
+    });
+  });
+});
+
 export {
-    initializeNavigation,
-    initializeSmoothScrolling,
-    initializeScrollEffects
+  initializeNavigation,
+  initializeSmoothScrolling,
+  initializeScrollEffects,
 };

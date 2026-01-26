@@ -1,215 +1,170 @@
-# Personal Homepage
+# Kanad Motiwale - Personal Homepage
 
-## Author
-**Your Name** - Computer Science Student  
-**Class Link:** [Your Class URL Here]
+## About
 
-## Project Objective
-Create a professional personal homepage showcasing web development skills using vanilla HTML5, CSS3, and ES6+ JavaScript. This project demonstrates modern web development practices including responsive design, ES6 modules, interactive animations, and accessibility features.
+**Kanad Motiwale** - Graduate Computer Science Student at Northeastern University  
+**Course:** Web Development - CS 5610
+
+## What This Is
+
+My personal homepage showcasing my software engineering background, projects, and skills. Built from scratch using vanilla HTML, CSS, and JavaScript to demonstrate modern web development practices.
 
 ## Screenshot
+
 ![Homepage Screenshot](images/homepage-screenshot.png)
 
-*Homepage featuring responsive design, animated skill bars, and modern CSS Grid layout*
+_Homepage featuring animated skill bars and responsive design_
 
-## 🚀 Features
+## Key Features
 
-### Creative Differentiating Feature
-- **Animated Skill Bars**: Interactive progress bars that animate when scrolled into view
-- **Smooth Scroll Navigation**: Enhanced navigation with smooth scrolling between sections
-- **Responsive Project Gallery**: Filterable project showcase with hover effects
-- **Interactive Animations**: Entrance animations, hover effects, and micro-interactions
+- **Animated Skill Bars**: Interactive progress bars that animate when you scroll to them
+- **Responsive Design**: Works great on phones, tablets, and desktops
+- **Real Projects**: Showcasing my actual work from LTIMindtree and FastFindFirm
+- **Clean Code**: ES6 modules, semantic HTML, and modern CSS Grid/Flexbox
 
-### Technical Features
-- **ES6 Modules**: Modular JavaScript architecture with proper imports/exports
-- **Responsive Design**: Mobile-first approach using CSS Grid and Flexbox
-- **Accessibility**: Semantic HTML, proper alt tags, keyboard navigation support
-- **Performance Optimized**: Efficient animations and optimized asset loading
-- **Cross-browser Compatible**: Works on all modern browsers
+## Tech Stack
 
-## 📁 Project Structure
+- **Frontend**: HTML5, CSS3, JavaScript ES6+
+- **Development**: Node.js, ESLint, Prettier
+- **Deployment**: GitHub Pages
+
+## Project Structure
+
 ```
 personal-homepage/
-├── index.html              # Main homepage
-├── about.html              # Detailed about page
-├── projects.html           # Project showcase page
-├── ai-generated.html       # AI-generated content page
+├── index.html              # Main page
+├── about.html              # Detailed background
+├── projects.html           # Project showcase
+├── ai-generated.html       # Tech insights page
 ├── css/
-│   └── styles.css         # Main stylesheet with responsive design
+│   └── styles.css         # All the styling
 ├── js/
-│   ├── main.js           # Main JavaScript module
-│   ├── features.js       # Creative animated features
-│   └── utils.js          # Utility functions and project filtering
-├── images/               # Image assets
-├── package.json         # Project configuration and dependencies
+│   ├── main.js           # Main functionality
+│   ├── features.js       # Animated features
+│   └── utils.js          # Helper functions
+├── images/               # Placeholder images
+├── package.json         # Dependencies
 ├── LICENSE             # MIT License
-└── README.md          # Project documentation
+└── README.md          # This file
 ```
 
-## 🛠 Instructions to Build
+## Getting Started
 
 ### Prerequisites
-- Node.js (version 16+)
-- npm (version 8+)
-- Modern web browser
+
+- Node.js (16+)
+- npm (8+)
+- Any modern web browser
 
 ### Setup
-1. **Clone the repository**
+
+1. **Clone it**
+
    ```bash
-   git clone https://github.com/yourusername/personal-homepage.git
+   git clone https://github.com/kanadmotiwale/personal-homepage.git
    cd personal-homepage
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm start
    ```
-   Or alternatively:
-   ```bash
-   npm run dev
-   ```
 
-4. **Open in browser**
-    - The site will automatically open at `http://localhost:3000`
-    - Or manually navigate to the above URL
+4. **Open your browser**
+   - Goes to `http://localhost:3000` automatically
+   - Or visit manually if it doesn't
 
 ### Development Commands
+
 ```bash
-npm run lint          # Check JavaScript for errors
-npm run lint:fix      # Auto-fix JavaScript issues
-npm run format        # Format all files with Prettier
-npm run validate      # Validate HTML structure
+npm run lint          # Check for JavaScript issues
+npm run lint:fix      # Auto-fix what can be fixed
+npm run format        # Format code with Prettier
 ```
 
-### Build for Production
-Since this is a static site, no build step is required. Simply:
-1. Copy all files to your web server
-2. Or deploy to GitHub Pages, Netlify, or Vercel
+### Deploy
 
-## 🎨 Design & Technology Choices
+This is a static site, so you can:
 
-### Color Scheme
-- **Primary:** #2563eb (Blue)
-- **Secondary:** #1e40af (Dark Blue)
-- **Accent:** #f59e0b (Amber)
-- **Background:** #f9fafb (Light Gray)
+- Upload files to any web server
+- Use GitHub Pages (already set up)
+- Deploy to Netlify or Vercel
 
-### Typography
-- **Font Family:** Inter, system fonts
-- **Responsive scaling:** Clamp values for optimal readability
+## My Background
 
-### Layout Strategy
-- **Mobile-first responsive design**
-- **CSS Grid for main layouts**
-- **Flexbox for component-level layouts**
-- **Semantic HTML5 structure**
+### Education
 
-## 🤖 GenAI Usage
+- **MS Computer Science** - Northeastern University (2025-2027, GPA: 3.9)
+- **BE Electronics & Telecom** - Ramrao Adik Institute, Mumbai (2019-2023)
 
-### AI Tools Used
-- **Model:** Claude 3.5 Sonnet (Anthropic)
-- **Version:** Latest available as of January 2026
-- **Usage:** Content generation for AI-generated page about web development trends
+### Work Experience
 
-### Prompts Used
-1. **Content Generation:**
-   ```
-   "Generate comprehensive content about the future of web development, 
-   including emerging technologies, best practices, and industry trends 
-   for a student portfolio website."
-   ```
+- **Software Engineer** - LTIMindtree (2023-2025)
+- **Co-founder** - FastFindFirm (2022-2023, 5K+ users)
+- **Software Engineering Intern** - LTIMindtree (2023)
 
-2. **Code Assistance:**
-   ```
-   "Help optimize JavaScript animations for smooth performance and 
-   suggest best practices for ES6 module organization."
-   ```
+### Skills I'm Good At
 
-### How AI Was Used
-- **Content Creation:** Generated the entire AI-generated page content about web development trends
-- **Code Optimization:** Assisted with performance improvements for animations
-- **Best Practices:** Provided guidance on modern web development standards
-- **Accessibility:** Helped ensure proper semantic HTML and ARIA labels
+- **Backend**: Java, Node.js, Python, REST APIs, Microservices
+- **Databases**: PostgreSQL, MongoDB, MySQL
+- **Cloud**: AWS Lambda, EC2, S3, CI/CD with Jenkins
+- **Frontend**: JavaScript, HTML/CSS, Angular
+- **Tools**: Git, Docker, Linux
 
-**Note:** All AI-generated content was reviewed, edited, and customized to fit the project requirements and personal voice.
+## Real Projects Featured
 
-## 🧪 Testing & Validation
+### FastFindFirm Ed-tech Platform
 
-### Code Quality
-- ✅ **ESLint**: No linting errors
-- ✅ **Prettier**: Code properly formatted
-- ✅ **W3C HTML Validator**: All HTML pages validate without errors
-- ✅ **Accessibility**: Tested with screen readers and keyboard navigation
+Co-founded and built this from scratch. Grew to 5,000+ users with Node.js backend, Python analytics, and microservices architecture. The scaling challenges taught me a lot about system design.
 
-### Browser Testing
-- ✅ **Chrome** (Latest)
-- ✅ **Firefox** (Latest)
-- ✅ **Safari** (Latest)
-- ✅ **Edge** (Latest)
+### PPM Platform at LTIMindtree
 
-### Responsive Testing
-- ✅ **Mobile** (320px - 768px)
-- ✅ **Tablet** (768px - 1024px)
-- ✅ **Desktop** (1024px+)
+Built workflow automation that reduced manual operations by 40%. Used MEAN stack and learned tons about enterprise database design.
 
-## 🚀 Deployment
+### Java Calendar Application
 
-### Live Demo
-- **GitHub Pages:** [https://yourusername.github.io/personal-homepage](https://yourusername.github.io/personal-homepage)
-- **Alternative URL:** [Your deployment URL]
+Course project that I got really into. Three different interfaces (GUI, CLI, headless), clean MVC architecture, and comprehensive JUnit tests.
 
-### Deployment Steps
-1. **GitHub Pages:**
-    - Push code to GitHub repository
-    - Enable GitHub Pages in repository settings
-    - Select source branch (main)
+## AI Usage Disclosure
 
-2. **Netlify:**
-    - Connect GitHub repository
-    - Set build command: `echo "Static site"`
-    - Set publish directory: `.`
+I used Claude AI to help with content generation for the "Tech Insights" page and to get feedback on code structure. The AI helped with:
 
-## 📋 Rubric Compliance
+- Writing the web development trends article
+- Suggesting best practices for ES6 modules
+- Code review and optimization tips
 
-### Design & Content (95 pts)
-- ✅ **Meaningful homepage content**: Professional introduction, skills, projects, contact
-- ✅ **Creative differentiating feature**: Animated skill bars with intersection observer
-- ✅ **Multiple pages**: 4 HTML pages with different content and purposes
+All the personal content, project descriptions, and technical details are my own experiences. The AI just helped with articulation and structure.
 
-### Technical Requirements (85 pts)
-- ✅ **ES6 Modules**: All JavaScript uses proper module syntax
-- ✅ **Organized structure**: Separate folders for CSS, JS, images
-- ✅ **Meta information**: Author, description, icon in all pages
-- ✅ **Original JS functionality**: 50+ lines of custom JavaScript
-- ✅ **Prettier formatted**: All code properly formatted
-- ✅ **W3C compliant**: No HTML validation errors
-- ✅ **ESLint compliant**: No linting errors
-- ✅ **Alt attributes**: All images have descriptive alt text
-- ✅ **CSS classes**: Proper class-based styling
-- ✅ **Standard HTML elements**: No div buttons or non-standard tags
-- ✅ **Clean CSS**: No !important declarations
-- ✅ **Grid/Flexbox**: Modern CSS layout techniques
-- ✅ **Package.json**: Complete with all dependencies
-- ✅ **MIT License**: Proper licensing
+## Live Demo
 
-### Documentation & Submission (50 pts)
-- ✅ **README**: Comprehensive documentation
-- ✅ **Public deployment**: Live accessible website
-- ✅ **Video demonstration**: [Link to video when created]
-- ✅ **GenAI documentation**: Complete usage details above
+**Website:** https://kanadmotiwale.github.io/personal-homepage
 
-## 📝 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Code Quality
 
-## 📞 Contact
-- **Email:** your.email@example.com
-- **GitHub:** [@yourusername](https://github.com/yourusername)
-- **LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/yourusername)
+- ✅ ESLint compliant (no errors)
+- ✅ Prettier formatted
+- ✅ W3C HTML valid
+- ✅ All images have alt text
+- ✅ Responsive design tested
+- ✅ Cross-browser compatible
+
+## Contact
+
+- **Email:** motiwale.k@northeastern.edu
+- **LinkedIn:** [linkedin.com/in/kanadmotiwale](https://linkedin.com/in/kanadmotiwale)
+- **GitHub:** [github.com/kanadmotiwale](https://github.com/kanadmotiwale)
+
+## License
+
+MIT License - feel free to use this code for your own portfolio.
 
 ---
-*Built with ❤️ using vanilla HTML, CSS, and JavaScript*
+
+Built with vanilla HTML, CSS, and JavaScript. No frameworks, no fluff.
