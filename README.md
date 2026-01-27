@@ -13,7 +13,7 @@ My personal homepage showcasing my software engineering background, projects, an
 
 ![Homepage Screenshot](images/homepage-screenshot.png)
 
-_Homepage featuring animated skill bars and responsive design_
+Homepage featuring animated skill bars and responsive design
 
 ## Key Features
 
@@ -78,8 +78,8 @@ personal-homepage/
    ```
 
 4. **Open your browser**
-   - Goes to `http://localhost:3000` automatically
-   - Or visit manually if it doesn't
+    - Goes to `http://localhost:3000` automatically
+    - Or visit manually if it doesn't
 
 ### Development Commands
 
@@ -88,14 +88,6 @@ npm run lint          # Check for JavaScript issues
 npm run lint:fix      # Auto-fix what can be fixed
 npm run format        # Format code with Prettier
 ```
-
-### Deploy
-
-This is a static site, so you can:
-
-- Upload files to any web server
-- Use GitHub Pages (already set up)
-- Deploy to Netlify or Vercel
 
 ## My Background
 
