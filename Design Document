@@ -1,0 +1,167 @@
+Design Document
+Personal Homepage - Kanad Motiwale
+Course: CS 5610 - Web Development (Project 1)
+ Author: Kanad Motiwale
+ Date: January 2026
+
+1. Project Description
+What I Am Building
+This project is my personal homepage. It is a digital portfolio that showcases who I am, what I have built, and where I am headed in my career. The goal was to create a clean and professional space where someone can quickly understand my background without needing to dig through LinkedIn or ask me for a resume.
+The site highlights my education, work experience, technical skills, and real projects that I have worked on. It also includes a short article page where I share my thoughts on web development trends. Everything is built using vanilla HTML, CSS, and JavaScript with no frameworks.
+Why I Am Building It
+I am currently a graduate student at Northeastern University. Before this, I worked as a Software Engineer at LTIMindtree and co founded an ed tech startup called FastFindFirm. I realized that I did not have one central place to present all of this experience in a clear and personal way.
+LinkedIn is useful, but it limits how much personality and depth you can show. A personal website gives me full control over how I tell my story. It also serves as a long term portfolio that I can keep improving as I grow in my career.
+On a practical level, every developer is expected to have some form of portfolio site today. This project helps me stand out when applying for internships, full time roles, or networking with people in the industry.
+Target Audience
+The main people I expect to visit this site are:
+Recruiters and hiring managers who want to evaluate me for internships or full time roles
+ Other developers who may want to collaborate or see what I have built
+ Professors and classmates who want to learn more about my background
+ People I meet at networking events who want a simple link to my work
+What Makes It Different
+The assignment required a creative differentiating feature. I implemented animated skill bars that trigger when the skills section scrolls into view. The bars smoothly animate from zero percent to their target values, and the numbers count up at the same time.
+I also added a few interactive touches to make the site feel more dynamic and polished:
+Navigation dots on the side of the homepage for quick section jumping
+ Hover effects on project cards
+ A filter system on the projects page
+ Smooth scrolling for internal links
+These features are not just decorative. They show that I understand JavaScript, browser APIs, and how to build small interactive components from scratch.
+
+2. User Personas
+Persona 1 Sarah Chen Technical Recruiter
+Location Boston
+ Occupation Senior Technical Recruiter at a mid size tech company
+Background
+ Sarah has been recruiting software engineers for about eight years. She reviews dozens of profiles every week and has developed a good sense of what separates strong candidates from average ones. She relies heavily on LinkedIn but appreciates when candidates have personal websites because it shows initiative and gives her a better sense of who they are beyond a resume.
+Goals
+ Quickly understand if a candidate has relevant experience
+ See real examples of projects
+ Get a sense of technical skills without reading walls of text
+ Easily find contact information
+Frustrations
+ Candidates who list skills without proof
+ Websites that are slow or confusing to navigate
+ Having to click through many pages to find basic information
+ Portfolios that look nice but do not say anything meaningful
+How My Site Helps
+ The homepage gives Sarah a fast overview. She immediately sees my experience stats, my skills, and a preview of my projects. Each project lists the tech stack used. Contact links are visible in the footer on every page.
+
+Persona 2 David Park Engineering Manager
+Location San Francisco
+ Occupation Engineering Manager at a Series B startup
+Background
+ David manages a team of backend engineers. He is always looking for candidates who can write clean code, work independently, and understand scalable systems. He has been disappointed in the past by candidates who interview well but struggle with real production work.
+Goals
+ Understand a candidate’s real technical depth
+ See if the candidate has worked on similar systems
+ Evaluate how clearly the candidate explains their work
+ Decide if the candidate would be a good culture fit
+Frustrations
+ Resumes full of buzzwords
+ Vague project descriptions
+ Candidates who only have classroom experience
+ Portfolios that focus more on visuals than substance
+How My Site Helps
+ The About page walks through my actual career path. The Projects page explains not just what I built but what problems I faced and how I solved them. David can see that I have worked on real production systems, not just small demo projects.
+
+Persona 3 Arin Fellow Computer Science Graduate Student
+Location Boston
+ Occupation Graduate student at a nearby university
+Background
+ Arin is in their second semester of grad school and is starting to think about internships. They have built a few projects but are unsure how to present them. They came across my site while looking for examples of developer portfolios.
+Goals
+ Get inspiration for their own portfolio
+ See how other students describe their projects
+ Understand what employers care about
+ Possibly connect with other students nearby
+Frustrations
+ Not knowing where to start with a portfolio
+ Feeling like their projects are not impressive enough
+ Being overwhelmed by complex templates
+ Not finding examples from people at a similar career stage
+How My Site Helps
+ Arin can see that my site is built using simple tools without frameworks. The code is clean and well organized. My course projects are presented honestly in a way that highlights what I learned rather than pretending they are massive startups.
+
+3. User Stories
+User Story 1
+ As a visitor, I want to see a clear navigation menu so that I can easily move between different sections of the site.
+User Story 2
+ As a recruiter, I want to see a brief introduction and photo on the homepage so that I can quickly understand who this person is.
+User Story 3
+ As a hiring manager, I want to see real projects with descriptions and tech stacks so that I can evaluate the candidate’s technical skills.
+User Story 4
+ As a visitor, I want to see a visual representation of skills so that I can quickly identify the candidate’s strengths.
+User Story 5
+ As a visitor, I want to easily find contact information so that I can reach out if I am interested.
+
+4. Design Mockups
+Homepage index.html
+Top navigation bar with name and links to Home About Projects and Insights
+ Large hero section with introduction text and profile photo
+ Short description of my background
+ Button to scroll to the projects section
+ About Me section with a short paragraph and three experience stats
+ Skills section with animated progress bars
+ Projects section showing three featured projects
+ Footer with copyright and social links
+
+About Page about.html
+Top navigation bar
+ Page title and subtitle
+ Main content area with career story
+ Education section with two degrees
+ Work experience section with roles and descriptions
+ Sidebar with quick facts and interests
+ Footer with social links
+
+Projects Page projects.html
+Top navigation bar
+ Page title and subtitle
+ Filter buttons for project categories
+ Project cards with images and descriptions
+ Detailed feature lists for each project
+ Tech stack tags
+ Footer with social links
+
+Tech Insights Page ai generated.html
+Top navigation bar
+ Page title and subtitle
+ Badge showing that AI assistance was used
+ Article content divided into sections
+ Grid of best practice cards
+ Disclaimer explaining AI usage
+ Footer with social links
+
+5. Technical Specifications
+Technologies Used
+HTML5 for semantic markup
+ CSS3 for layout and styling using Grid Flexbox and CSS variables
+ JavaScript ES6 for modules animations and interactivity
+ No frameworks or component libraries
+
+File Structure
+personal homepage
+ index.html
+ about.html
+ projects.html
+ ai generated.html
+ css
+ styles.css
+ js
+ main.js
+ features.js
+ utils.js
+ images
+ package.json
+ README.md
+ LICENSE
+
+Creative Feature
+Animated Skill Bars
+The skill bars use the Intersection Observer API to detect when the skills section enters the viewport. When this happens, each bar smoothly animates from zero percent to its target value using CSS transitions. The percentage numbers also animate using requestAnimationFrame so they count up smoothly instead of jumping to the final value.
+This feature makes the page more engaging and demonstrates my ability to build interactive behavior without relying on any external libraries.
+
+6. Conclusion
+This personal homepage serves both as a portfolio and as a learning exercise. It shows that I can build a responsive and accessible website using modern web standards without relying on frameworks. The content reflects my real experience and career goals, making it a practical tool for job searching and networking.
+The design focuses on clarity and usability rather than flashy visuals. The animated skill bars and interactive project cards add just enough personality to make the site memorable. Most importantly, this is a site I feel comfortable sharing because it represents who I am as a developer and what I am working toward.
+
