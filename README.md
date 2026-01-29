@@ -3,7 +3,7 @@
 ## About
 
 **Kanad Motiwale** - Graduate Computer Science Student at Northeastern University  
-**Course:** Web Development - CS 5610
+**Course:** Web Development - CS 5610 # Missing class link
 
 ## What This Is
 
