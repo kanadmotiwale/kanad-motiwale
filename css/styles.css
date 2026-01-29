@@ -1,3 +1,6 @@
+/* The styling looks great! But the CSS file is quite large and covers many aspects. 
+It would be great if it could be broken down into smaller files, which would improve maintainability. 
+Or adding some comments to bettern separate each section. :) */
 * {
   margin: 0;
   padding: 0;
