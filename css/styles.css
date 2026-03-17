@@ -120,6 +120,7 @@ h1, h2, h3, h4 {
   padding: 6rem 0 5.5rem;
   position: relative;
   border-bottom: 1px solid var(--border);
+  width: 100%;
 }
 
 .hero-section::after {
@@ -135,8 +136,8 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   padding: 0 3rem;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 5rem;
+  grid-template-columns: 1fr 320px;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -169,7 +170,7 @@ h1, h2, h3, h4 {
 .hero-description {
   font-size: 0.97rem;
   color: var(--text-body);
-  max-width: 500px;
+  max-width: 100%;
   line-height: 1.85;
   margin-bottom: 2.5rem;
   font-family: 'DM Sans', sans-serif;
