@@ -24,7 +24,7 @@
   --radius:        6px;
   --radius-lg:     12px;
   --transition:    all 0.22s ease;
-  --max-width:     1140px;
+  --max-width:     1280px;
 }
 
 html { scroll-behavior: smooth; }
@@ -47,7 +47,7 @@ h1, h2, h3, h4 {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 /* ─── HEADER ───────────────────────────────────── */
@@ -63,7 +63,7 @@ h1, h2, h3, h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2.5rem;
+  padding: 0 3rem;
   max-width: var(--max-width);
   margin: 0 auto;
   height: 72px;
@@ -133,7 +133,7 @@ h1, h2, h3, h4 {
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 3rem;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 5rem;
@@ -386,7 +386,7 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.25rem;
-  max-width: 860px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -1273,6 +1273,7 @@ h1, h2, h3, h4 {
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; text-align: center; }
   .tech-categories { grid-template-columns: 1fr; }
+  .blog-tiles { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
@@ -1281,4 +1282,5 @@ h1, h2, h3, h4 {
   .section { padding: 3.5rem 0; }
   .profile-image { width: 175px; height: 175px; }
   .contact-form-wrapper { padding: 1.5rem; }
+  .blog-tiles { grid-template-columns: 1fr; }
 }
