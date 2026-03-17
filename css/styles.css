@@ -917,6 +917,8 @@ h1, h2, h3, h4 {
 /* ─── BLOG ARTICLE PAGES ────────────────────────── */
 .blog-page { padding: 4rem 0 5rem; }
 
+.blog-page .container { max-width: 900px; }
+
 .blog-back {
   display: inline-flex;
   align-items: center;
