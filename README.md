@@ -6,6 +6,11 @@
 Open to **SWE and SDE Internships and Coop** opportunities in the United States.
 
 ---
+## Live Site
+
+**Website:** https://kanadmotiwale.github.io/kanad-personal-homepage/
+
+---
 
 ## What This Is
 
@@ -150,12 +155,6 @@ Headless Playwright automation that monitors Workday for new job postings and se
 
 ### License Plate Recognition System
 ML-powered gate control with 92% detection accuracy across 5,000+ samples. REST APIs under 300ms. Python + Angular + OpenCV.
-
----
-
-## Live Site
-
-**Website:** https://kanadmotiwale.github.io/kanad-personal-homepage/
 
 ---
 
