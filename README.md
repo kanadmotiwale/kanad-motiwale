@@ -3,7 +3,7 @@
 ## About
 
 **Kanad Motiwale** - Full-Stack Engineer · Graduate Computer Science Student at Northeastern University  
-Open to **SWE and SDE Internships and Coop's** opportunities in the United States.
+Open to **SWE and SDE Internships and Coop** opportunities in the United States.
 
 ---
 
