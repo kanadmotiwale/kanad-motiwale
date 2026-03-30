@@ -8,7 +8,7 @@ Open to **SWE and SDE Internships and Coop** opportunities in the United States.
 ---
 ## Live Site
 
-**Website:** https://kanadmotiwale.github.io/kanad-personal-homepage/
+**Website:**  https://kanadmotiwale.github.io/kanad-motiwale/
 
 ---
 
