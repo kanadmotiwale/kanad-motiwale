@@ -1,26 +1,24 @@
-# Kanad Motiwale - Personal Homepage
+# Kanad Motiwale — Personal Portfolio
 
 ## About
 
-**Kanad Motiwale** - Graduate Computer Science Student at Northeastern University  
-**Course:** Web Development - CS 5610
+**Kanad Motiwale** — Full-Stack Engineer · Graduate Computer Science Student at Northeastern University  
+Open to **Software Engineer / Backend Engineer / Full-Stack Developer** opportunities in the United States.
+
+---
 
 ## What This Is
 
-My personal homepage showcasing my software engineering background, projects, and skills. Built from scratch using vanilla HTML, CSS, and JavaScript to demonstrate modern web development practices.
+My personal portfolio website showcasing my software engineering background, projects, and skills. Built from scratch using vanilla HTML, CSS, and JavaScript — no frameworks, no fluff.
 
-## Screenshot
-
-![Homepage Screenshot](images/homepage-screenshot.png)
-
-Homepage featuring animated skill bars and responsive design
 
 ## Key Features
 
-- **Animated Skill Bars**: Interactive progress bars that animate when you scroll to them
-- **Responsive Design**: Works great on phones, tablets, and desktops
-- **Real Projects**: Showcasing my actual work from LTIMindtree and FastFindFirm
-- **Clean Code**: ES6 modules, semantic HTML, and modern CSS Grid/Flexbox
+- **Animated Skill Bars** — Interactive progress bars that animate on scroll
+- **Responsive Design** — Works on phones, tablets, and desktops
+- **Project Showcase** — Real projects with live demos and GitHub links
+- **Tech Insights Blog** — Articles on software engineering topics
+- **Clean Code** — ES6 modules, semantic HTML, and modern CSS Grid/Flexbox
 
 ## Tech Stack
 
@@ -32,20 +30,21 @@ Homepage featuring animated skill bars and responsive design
 
 ```
 personal-homepage/
-├── index.html              # Main page
-├── about.html              # Detailed background
-├── projects.html           # Project showcase
-├── ai-generated.html       # Tech insights page
+├── index.html              # Main landing page
+├── html/
+│   ├── about.html          # Background & experience
+│   ├── projects.html       # Project showcase
+│   ├── blog-ai.html        # Tech insights
+│   └── contact.html        # Contact form
 ├── css/
-│   └── styles.css         # All the styling
+│   └── styles.css          # All styling
 ├── js/
-│   ├── main.js           # Main functionality
-│   ├── features.js       # Animated features
-│   └── utils.js          # Helper functions
-├── images/               # Placeholder images
-├── package.json         # Dependencies
-├── LICENSE             # MIT License
-└── README.md          # This file
+│   ├── main.js             # Core functionality
+│   ├── features.js         # Animated features
+│   └── utils.js            # Helper functions
+├── images/                 # Site images
+├── package.json
+└── README.md
 ```
 
 ## Getting Started
@@ -61,8 +60,8 @@ personal-homepage/
 1. **Clone it**
 
    ```bash
-   git clone https://github.com/kanadmotiwale/personal-homepage.git
-   cd personal-homepage
+   git clone https://github.com/kanadmotiwale/kanad-personal-homepage.git
+   cd kanad-personal-homepage
    ```
 
 2. **Install dependencies**
@@ -78,65 +77,87 @@ personal-homepage/
    ```
 
 4. **Open your browser**
-    - Goes to `http://localhost:3000` automatically
-    - Or visit manually if it doesn't
+   - Goes to `http://localhost:3000` automatically
 
 ### Development Commands
 
 ```bash
-npm run lint          # Check for JavaScript issues
-npm run lint:fix      # Auto-fix what can be fixed
-npm run format        # Format code with Prettier
+npm run lint        # Check for JavaScript issues
+npm run lint:fix    # Auto-fix what can be fixed
+npm run format      # Format code with Prettier
 ```
+
+---
 
 ## My Background
 
 ### Education
 
-- **MS Computer Science** - Northeastern University (2025-2027, GPA: 3.9)
-- **BE Electronics & Telecom** - Ramrao Adik Institute, Mumbai (2019-2023)
+- **MS Computer Science** — Northeastern University, Khoury College (2025–2027, GPA: 3.9/4.0)
+- **BE Electronics & Telecommunications** — University of Mumbai (2019–2023, CGPI: 8.72/10)
 
 ### Work Experience
 
-- **Software Engineer** - LTIMindtree (2023-2025)
-- **Co-founder** - FastFindFirm (2022-2023, 5K+ users)
-- **Software Engineering Intern** - LTIMindtree (2023)
+- **Software Engineer** — LTIMindtree (2023–2025)
+- **Co-founder** — FastFindFirm (2022–2023, 5,000+ users)
 
-### Skills I'm Good At
+### Skills
 
-- **Backend**: Java, Node.js, Python, REST APIs, Microservices
-- **Databases**: PostgreSQL, MongoDB, MySQL
-- **Cloud**: AWS Lambda, EC2, S3, CI/CD with Jenkins
-- **Frontend**: JavaScript, HTML/CSS, Angular
-- **Tools**: Git, Docker, Linux
+- **Languages**: Java, Python, TypeScript, JavaScript, SQL, R, C++
+- **Backend**: Node.js, Express, Spring Boot, FastAPI, Next.js, REST APIs, Microservices
+- **Databases**: PostgreSQL, MongoDB, MySQL, DynamoDB, SQLite
+- **Cloud & DevOps**: AWS (Lambda, EC2, S3, CloudWatch), Docker, Jenkins, CI/CD, Vercel
+- **Frontend**: React, Angular, Tailwind, HTML5, CSS3
+- **Testing**: JUnit, Selenium, Playwright, TDD — 90%+ coverage
 
-## Real Projects Featured
+---
+
+## Featured Projects
+
+### SponsorFlow
+Sponsorship marketplace for local events and small businesses targeting the underserved $50–$1,000 sponsorship market. Built with Next.js 15, TypeScript, PostgreSQL, and Drizzle on an 8-table schema.
+→ [GitHub](https://github.com/kanadmotiwale/sponsorflow)
+
+### ClubMatch
+Full-stack platform for discovering student organizations. Role-based access, 1,100+ seeded records, guest registration, deployed live on Render.
+→ [GitHub](https://github.com/kanadmotiwale/clubmatch) · [Live Demo](https://clubmatch.onrender.com)
+
+### Expiro
+Role-based inventory and expiry tracker for grocery store staff. Dual manager/employee views, 1,000+ records across 13 categories, deployed on Vercel.
+→ [GitHub](https://github.com/kanadmotiwale/Expiro) · [Live Demo](https://expiro-three.vercel.app/)
 
 ### FastFindFirm Ed-tech Platform
+Co-founded and built from scratch. Grew to 5,000+ users with a Node.js backend, Python analytics, and microservices architecture.
 
-Co-founded and built this from scratch. Grew to 5,000+ users with Node.js backend, Python analytics, and microservices architecture. The scaling challenges taught me a lot about system design.
-
-### PPM Platform at LTIMindtree
-
-Built workflow automation that reduced manual operations by 40%. Used MEAN stack and learned tons about enterprise database design.
+### Policy & Placement Management Platform *(LTIMindtree)*
+Workflow automation for Marsh McLennan's insurance platform. Reduced manual processing by 40%, improved query performance by 35%, served 10,000+ enterprise users.
 
 ### Java Calendar Application
+Full-featured calendar with GUI, CLI, and headless modes. Clean MVC architecture, 60+ unit tests, 90%+ coverage, handles 10,000+ records.
+→ [GitHub](https://github.com/kanadmotiwale/Calendar-Application)
 
-Course project that I got really into. Three different interfaces (GUI, CLI, headless), clean MVC architecture, and comprehensive JUnit tests.
+### StreamVault
+Cloud-based data warehouse for SportsTV Germany. ETL pipeline from SQLite + CSV into a Kimball star schema on MySQL with RMarkdown analytics reports.
+→ [GitHub](https://github.com/kanadmotiwale/StreamVault)
 
-## AI Usage Disclosure
+### DineMetrics
+End-to-end data engineering project simulating a restaurant POS migration. 3NF schema, MySQL stored procedures, PDF analytics via RMarkdown.
+→ [GitHub](https://github.com/kanadmotiwale/Dine-Metrics)
 
-I used Claude AI to help with content generation for the "Tech Insights" page and to get feedback on code structure. The AI helped with:
+### Job Portal Monitor
+Headless Playwright automation that monitors Workday for new job postings and sends push notifications to your phone via ntfy.sh every 10 minutes.
+→ [GitHub](https://github.com/kanadmotiwale/workday-monitor)
 
-- Writing the web development trends article
-- Suggesting best practices for ES6 modules
-- Code review and optimization tips
+### License Plate Recognition System
+ML-powered gate control with 92% detection accuracy across 5,000+ samples. REST APIs under 300ms. Python + Angular + OpenCV.
 
-All the personal content, project descriptions, and technical details are my own experiences. The AI just helped with articulation and structure.
+---
 
-## Live Demo
+## Live Site
 
 **Website:** https://kanadmotiwale.github.io/kanad-personal-homepage/
+
+---
 
 ## Code Quality
 
@@ -147,16 +168,14 @@ All the personal content, project descriptions, and technical details are my own
 - Responsive design tested
 - Cross-browser compatible
 
+---
+
 ## Contact
 
 - **Email:** motiwale.k@northeastern.edu
-- **LinkedIn:** [linkedin.com/in/kanadmotiwale](https://linkedin.com/in/kanadmotiwale)
+- **LinkedIn:** [linkedin.com/in/kanadmotiwale](https://www.linkedin.com/in/kanadmotiwale)
 - **GitHub:** [github.com/kanadmotiwale](https://github.com/kanadmotiwale)
-
-## License
-
-MIT License - feel free to use this code for your own portfolio.
 
 ---
 
-Built with vanilla HTML, CSS, and JavaScript. No frameworks, no fluff.
+MIT License — feel free to use this as a reference for your own portfolio.
