@@ -1,24 +1,24 @@
-# Kanad Motiwale — Personal Portfolio
+# Kanad Motiwale - Personal Portfolio
 
 ## About
 
-**Kanad Motiwale** — Full-Stack Engineer · Graduate Computer Science Student at Northeastern University  
+**Kanad Motiwale** - Full-Stack Engineer · Graduate Computer Science Student at Northeastern University  
 Open to **Software Engineer / Backend Engineer / Full-Stack Developer** opportunities in the United States.
 
 ---
 
 ## What This Is
 
-My personal portfolio website showcasing my software engineering background, projects, and skills. Built from scratch using vanilla HTML, CSS, and JavaScript — no frameworks, no fluff.
+My personal portfolio website showcasing my software engineering background, projects, and skills. Built from scratch using vanilla HTML, CSS, and JavaScript - no frameworks, no fluff.
 
 
 ## Key Features
 
-- **Animated Skill Bars** — Interactive progress bars that animate on scroll
-- **Responsive Design** — Works on phones, tablets, and desktops
-- **Project Showcase** — Real projects with live demos and GitHub links
-- **Tech Insights Blog** — Articles on software engineering topics
-- **Clean Code** — ES6 modules, semantic HTML, and modern CSS Grid/Flexbox
+- **Animated Skill Bars** - Interactive progress bars that animate on scroll
+- **Responsive Design** - Works on phones, tablets, and desktops
+- **Project Showcase** - Real projects with live demos and GitHub links
+- **Tech Insights Blog** - Articles on software engineering topics
+- **Clean Code** - ES6 modules, semantic HTML, and modern CSS Grid/Flexbox
 
 ## Tech Stack
 
@@ -93,13 +93,13 @@ npm run format      # Format code with Prettier
 
 ### Education
 
-- **MS Computer Science** — Northeastern University, Khoury College (2025–2027, GPA: 3.9/4.0)
-- **BE Electronics & Telecommunications** — University of Mumbai (2019–2023, CGPI: 8.72/10)
+- **MS Computer Science** - Northeastern University, Khoury College (2025–2027, GPA: 3.9/4.0)
+- **BE Electronics & Telecommunications** - University of Mumbai (2019–2023, CGPI: 8.72/10)
 
 ### Work Experience
 
-- **Software Engineer** — LTIMindtree (2023–2025)
-- **Co-founder** — FastFindFirm (2022–2023, 5,000+ users)
+- **Software Engineer** - LTIMindtree (2023–2025)
+- **Co-founder** - FastFindFirm (2022–2023, 5,000+ users)
 
 ### Skills
 
@@ -108,7 +108,7 @@ npm run format      # Format code with Prettier
 - **Databases**: PostgreSQL, MongoDB, MySQL, DynamoDB, SQLite
 - **Cloud & DevOps**: AWS (Lambda, EC2, S3, CloudWatch), Docker, Jenkins, CI/CD, Vercel
 - **Frontend**: React, Angular, Tailwind, HTML5, CSS3
-- **Testing**: JUnit, Selenium, Playwright, TDD — 90%+ coverage
+- **Testing**: JUnit, Selenium, Playwright, TDD - 90%+ coverage
 
 ---
 
@@ -178,4 +178,4 @@ ML-powered gate control with 92% detection accuracy across 5,000+ samples. REST 
 
 ---
 
-MIT License — feel free to use this as a reference for your own portfolio.
+MIT License - feel free to use this as a reference for your own portfolio.
