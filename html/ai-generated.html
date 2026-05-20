@@ -5,80 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Kanad Motiwale" />
     <meta name="description" content="Blogs by Kanad Motiwale on software, AI, and technology" />
-    <link rel="icon" href="../images/favicon.png" type="image/png" />
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
     <title>Blogs - Kanad Motiwale</title>
-    <link rel="stylesheet" href="../css/styles.css?v=2" />
+    <link rel="stylesheet" href="../css/styles.css?v=3" />
     <style>
-      .blog-tiles {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        margin-bottom: 3rem;
-      }
-      @media (max-width: 900px) { .blog-tiles { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 580px) { .blog-tiles { grid-template-columns: 1fr; } }
-
-      .blog-tile {
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
-        cursor: pointer;
-        transition: var(--transition);
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-      }
-      .blog-tile:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-lg);
-        border-color: var(--accent);
-      }
       .blog-tile-header {
         background: var(--primary);
-        padding: 1.75rem;
-        flex-shrink: 0;
         min-height: 160px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        border-bottom: none;
       }
-      .blog-tile-header h2 {
-        font-size: 1.05rem;
-        color: var(--white);
-        line-height: 1.35;
-        margin-top: 0.6rem;
-      }
-      .blog-tile-body {
-        padding: 1.25rem 1.75rem 1.5rem;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-      }
-      .blog-meta {
-        font-size: 0.78rem;
-        color: var(--text-muted);
-        margin-bottom: 0.6rem;
-        font-family: 'DM Sans', sans-serif;
-      }
-      .blog-excerpt {
-        font-size: 0.9rem;
-        color: var(--text-body);
-        line-height: 1.65;
-        margin-bottom: 1rem;
-        flex: 1;
-      }
-      .blog-read-more {
-        font-size: 0.82rem;
-        font-weight: 600;
-        color: var(--accent);
-        transition: var(--transition);
-        display: inline-flex;
-        align-items: center;
-        gap: 0.25rem;
-      }
-      .blog-tile:hover .blog-read-more { gap: 0.45rem; color: var(--accent-dark); }
+      .blog-tile-header h2 { color: var(--white); }
+      .blog-tag { background: rgba(255,255,255,0.15); color: var(--white); border-color: rgba(255,255,255,0.2); }
     </style>
   </head>
   <body>
@@ -93,6 +33,9 @@
           <li><a href="ai-generated.html" class="nav-link active">Blogs</a></li>
           <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
         </ul>
+        <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </header>
 
@@ -207,6 +150,7 @@
             <a href="mailto:motiwale.k@northeastern.edu" class="social-link">Email</a>
           </div>
         </div>
+        <div class="footer-copy">© 2026 Kanad Motiwale · Boston, MA</div>
       </div>
     </footer>
     <script type="module" src="../js/main.js"></script>
