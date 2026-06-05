@@ -9,11 +9,36 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeSmoothScrolling();
   initializeScrollEffects();
   initializeEntryAnimations();
+  initializeThemeToggle();
 
   if (document.querySelector("form")) {
     initializeFormHandling();
   }
 });
+
+function initializeThemeToggle() {
+  const btn = document.getElementById("themeToggle");
+  if (!btn) return;
+
+  const saved = localStorage.getItem("preferred-theme") || "light";
+  applyTheme(saved, btn);
+
+  btn.addEventListener("click", () => {
+    const isDark = document.body.classList.contains("dark-theme");
+    applyTheme(isDark ? "light" : "dark", btn);
+  });
+}
+
+function applyTheme(theme, btn) {
+  if (theme === "dark") {
+    document.body.classList.add("dark-theme");
+    btn.textContent = "☀️";
+  } else {
+    document.body.classList.remove("dark-theme");
+    btn.textContent = "🌙";
+  }
+  localStorage.setItem("preferred-theme", theme);
+}
 
 function initializeNavigation() {
   const navLinks = document.querySelectorAll(".nav-link");

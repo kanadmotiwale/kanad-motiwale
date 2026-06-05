@@ -73,7 +73,7 @@ h1, h2, h3, h4 {
 
 .nav-brand {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.45rem;
+  font-size: 1.75rem;
   font-weight: 400;
   color: var(--text-dark);
   text-decoration: none;
@@ -81,6 +81,56 @@ h1, h2, h3, h4 {
 }
 
 .nav-brand span { color: var(--accent); }
+
+/* ─── THEME TOGGLE ──────────────────────────────── */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 2.1rem;
+  height: 2.1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+  color: var(--text-dark);
+}
+.theme-toggle:hover { background: var(--light-grey); }
+
+/* ─── DARK THEME ────────────────────────────────── */
+body.dark-theme {
+  --primary:       #e2e8f0;
+  --primary-light: #cbd5e1;
+  --accent:        #e2e8f0;
+  --accent-dark:   #ffffff;
+  --accent-light:  #94a3b8;
+  --accent-bg:     rgba(255,255,255,0.06);
+  --accent-border: rgba(255,255,255,0.12);
+  --white:         #0f172a;
+  --off-white:     #1e293b;
+  --light-grey:    #1e293b;
+  --mid-grey:      #334155;
+  --border:        #334155;
+  --text-dark:     #f1f5f9;
+  --text-body:     #cbd5e1;
+  --text-muted:    #94a3b8;
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:     0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:     0 12px 32px rgba(0,0,0,0.6);
+}
+body.dark-theme .header { background: var(--white); }
+body.dark-theme .nav-menu { background: var(--white); }
+body.dark-theme .blog-tile-body { background: #1e293b; }
+body.dark-theme .project-modal { background: #1e293b; }
+body.dark-theme .schedule-card { background: #1e293b; }
+body.dark-theme .schedule-input,
+body.dark-theme .schedule-select { background: #0f172a; color: var(--text-body); border-color: var(--border); }
+body.dark-theme .repo-card { background: #1e293b; }
+body.dark-theme .github-chart-wrapper { background: #1e293b; }
+body.dark-theme .contact-form-wrapper { background: #1e293b; }
 
 .nav-menu {
   display: flex;
@@ -103,16 +153,9 @@ h1, h2, h3, h4 {
 .nav-link:hover { color: var(--text-dark); background: var(--light-grey); }
 .nav-link.active { color: var(--accent); background: var(--accent-bg); font-weight: 600; }
 
-.nav-link.nav-cta {
-  background: var(--accent);
-  color: var(--white);
-  margin-left: 0.5rem;
-  font-weight: 600;
-  padding: 0.55rem 1.2rem;
-}
-
-.nav-link.nav-cta:hover { background: var(--accent-dark); color: var(--white); }
-.nav-link.nav-cta.active { background: var(--accent-dark); color: var(--white); }
+.nav-link.nav-cta { font-weight: 500; }
+.nav-link.nav-cta:hover { color: var(--text-dark); background: var(--light-grey); }
+.nav-link.nav-cta.active { color: var(--accent); background: var(--accent-bg); font-weight: 600; }
 
 /* ─── HAMBURGER ─────────────────────────────────── */
 .nav-hamburger {
@@ -1376,6 +1419,20 @@ h1, h2, h3, h4 {
 .github-chart { width: 100%; max-width: 900px; height: auto; display: inline-block; }
 .github-chart-cta { text-align: center; margin-top: 1.5rem; }
 
+/* ─── RESUME EMBED ───────────────────────────────── */
+.resume-embed-wrapper {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--light-grey);
+}
+.resume-embed {
+  width: 100%;
+  height: 420px;
+  border: none;
+  display: block;
+}
+
 /* ─── SCHEDULE MEETING ───────────────────────────── */
 .schedule-section { padding: 4rem 0; background: var(--off-white); }
 .schedule-card {
@@ -1478,6 +1535,7 @@ h1, h2, h3, h4 {
   .header.nav-open .nav-menu { display: flex; }
   .nav-link { font-size: 0.9rem; padding: 0.6rem 0.9rem; }
   .nav-link.nav-cta { margin-left: 0; width: 100%; text-align: center; display: block; }
+  .theme-toggle { order: 2; }
   .header.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .header.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
   .header.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
