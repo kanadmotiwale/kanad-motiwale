@@ -663,7 +663,7 @@ h1, h2, h3, h4 {
 
 .projects-grid-detailed {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -851,20 +851,24 @@ h1, h2, h3, h4 {
 }
 
 .blog-tile:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--accent);
+  border-color: var(--text-dark);
 }
 
 .blog-tile-header {
-  background: var(--light-grey);
-  padding: 1.75rem;
+  padding: 1.75rem 1.75rem 1.25rem;
   flex-shrink: 0;
   border-bottom: 1px solid var(--border);
+  background: var(--white);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .blog-tile-header h2 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--text-dark);
   line-height: 1.35;
   margin-top: 0.6rem;
@@ -875,6 +879,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   flex: 1;
+  background: var(--off-white);
 }
 
 .blog-meta {
@@ -896,7 +901,7 @@ h1, h2, h3, h4 {
 .blog-read-more {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--text-dark);
   transition: var(--transition);
   display: inline-flex;
   align-items: center;
@@ -904,19 +909,19 @@ h1, h2, h3, h4 {
   font-family: 'DM Sans', sans-serif;
 }
 
-.blog-tile:hover .blog-read-more { gap: 0.45rem; color: var(--accent-dark); }
+.blog-tile:hover .blog-read-more { gap: 0.45rem; }
 
 .blog-tag {
   display: inline-block;
-  background: var(--accent-bg);
-  color: var(--accent-dark);
-  font-size: 0.68rem;
+  background: var(--text-dark);
+  color: var(--white);
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 0.28rem 0.7rem;
   border-radius: 3px;
-  border: 1px solid var(--accent-border);
+  border: none;
   font-family: 'DM Sans', sans-serif;
 }
 
@@ -1269,6 +1274,95 @@ h1, h2, h3, h4 {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ─── PROJECT PLACEHOLDER IMAGES ────────────────── */
+.project-img-placeholder {
+  width: 100%;
+  height: 245px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.project-img-placeholder span {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'DM Serif Display', Georgia, serif;
+  line-height: 1.3;
+  z-index: 1;
+}
+
+/* ─── PROJECT MODAL ──────────────────────────────── */
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.7);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.project-modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.project-modal {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  max-width: 680px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  transform: translateY(20px);
+  transition: transform 0.25s ease;
+  box-shadow: var(--shadow-lg);
+}
+.project-modal-overlay.open .project-modal { transform: translateY(0); }
+.modal-header {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.modal-header img, .modal-header .project-img-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  width: 2rem; height: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  color: var(--text-dark);
+  z-index: 10;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: var(--white); }
+.modal-body { padding: 2rem; }
+.modal-title { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.modal-description { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; margin-bottom: 1.25rem; }
+.modal-features { margin-bottom: 1.25rem; }
+.modal-features h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.6rem; }
+.modal-features ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.modal-features li { font-size: 0.9rem; color: var(--text-body); padding-left: 1rem; position: relative; }
+.modal-features li::before { content: "→"; position: absolute; left: 0; color: var(--text-muted); }
+.modal-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+.modal-links { display: flex; gap: 0.75rem; }
+.project-card-detailed { cursor: pointer; }
+
 /* ─── GITHUB CHART ──────────────────────────────── */
 .github-section { background: var(--off-white); }
 .github-chart-wrapper {
@@ -1359,7 +1453,7 @@ h1, h2, h3, h4 {
   .hero-photo { display: flex; justify-content: center; order: -1; }
   .hero-actions { justify-content: center; }
   .about-grid, .about-content-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .projects-grid-detailed { grid-template-columns: 1fr; }
+  .projects-grid-detailed { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {

@@ -16,7 +16,6 @@
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
           <li><a href="projects.html" class="nav-link active">Projects</a></li>
           <li><a href="ai-generated.html" class="nav-link">Blogs</a></li>
           <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
@@ -65,14 +64,14 @@
               </div>
               <div class="project-content-detailed">
                 <h3 class="project-title-detailed">SponsorFlow</h3>
-                <p class="project-description-detailed">Sponsorship marketplace targeting the underserved $50–$1,000 local sponsorship market. Event organizers list tiered packages (Bronze, Silver, Gold); local businesses browse, propose, and track deals. Includes role-based auth, dark/light mode, and an 8-table PostgreSQL schema.</p>
+                <p class="project-description-detailed">Full-stack sponsorship marketplace connecting event organizers and businesses, targeting the underserved $50–$1,000 local sponsorship market. Built with Next.js 16 and PostgreSQL.</p>
                 <div class="project-features">
                   <h4>Key Highlights</h4>
                   <ul>
-                    <li>Role-based access — organizers and businesses</li>
-                    <li>Full deal lifecycle: propose → accept/reject → track</li>
-                    <li>Dark/light theme toggle + responsive design</li>
-                    <li>Zod validation + NextAuth.js v5 + Drizzle ORM</li>
+                    <li>Role-based authentication via NextAuth.js v5 and Drizzle ORM across 8 relational tables</li>
+                    <li>Tiered package management (Bronze, Silver, Gold) and full deal lifecycle: propose → accept/reject → track</li>
+                    <li>Zod validation, Zustand state management, and responsive Tailwind CSS UI</li>
+                    <li>Dark/light theme toggle + deployed on Vercel</li>
                   </ul>
                 </div>
                 <div class="project-tech-detailed">
@@ -136,14 +135,14 @@
               </div>
               <div class="project-content-detailed">
                 <h3 class="project-title-detailed">Lexorion</h3>
-                <p class="project-description-detailed">RAG-based AI knowledge assistant that lets you upload documents and have real conversations with them. Parses PDFs and markdown, chunks and embeds content into FAISS, then retrieves relevant sections and generates grounded answers with source citations. Runs entirely locally — no cloud AI costs.</p>
+                <p class="project-description-detailed">Fully local RAG pipeline using FAISS, Ollama (llama3.2), and nomic-embed-text embeddings — zero cloud costs. Upload documents and have real conversations with them, with grounded answers and source citations.</p>
                 <div class="project-features">
                   <h4>Key Highlights</h4>
                   <ul>
-                    <li>Full RAG pipeline: parse → chunk → embed → retrieve → generate</li>
-                    <li>Semantic search panel — direct content lookup without LLM</li>
-                    <li>Pydantic AI agent for re-ranking and confidence scoring</li>
-                    <li>Entirely local — Ollama for LLM inference and embeddings</li>
+                    <li>ETL pipeline in FastAPI to parse PDFs, chunk text with tiktoken, and index into FAISS with SQLite</li>
+                    <li>Pydantic AI multi-agent re-ranking layer for confidence scoring</li>
+                    <li>React frontend with chat, upload, and semantic search panels</li>
+                    <li>Entirely local — Ollama for LLM inference and embeddings, no cloud costs</li>
                   </ul>
                 </div>
                 <div class="project-tech-detailed">
@@ -259,7 +258,7 @@
             <!-- PPM Platform -->
             <article class="project-card-detailed" data-category="web backend">
               <div class="project-image-container">
-                <img src="../images/project2.jpg" alt="PPM Platform" class="project-image-detailed" loading="lazy" />
+                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%)"><span>Policy &amp; Placement<br>Management Platform</span></div>
                 <div class="project-overlay">
                   <div class="project-links">
                     <a href="https://github.com/kanadmotiwale" class="project-link-btn">GitHub</a>
@@ -290,7 +289,7 @@
             <!-- Calendar Application -->
             <article class="project-card-detailed" data-category="backend">
               <div class="project-image-container">
-                <img src="../images/project3.png" alt="Java Calendar Application" class="project-image-detailed" loading="lazy" />
+                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #003d1a 0%, #005c28 60%, #007a35 100%)"><span>Java Calendar<br>Application</span></div>
                 <div class="project-overlay">
                   <div class="project-links">
                     <a href="https://github.com/kanadmotiwale/Calendar-Application" target="_blank" class="project-link-btn">GitHub</a>
@@ -299,13 +298,13 @@
               </div>
               <div class="project-content-detailed">
                 <h3 class="project-title-detailed">Java Calendar Application</h3>
-                <p class="project-description-detailed">Full-featured calendar app with GUI, interactive CLI, and headless scripting modes. Supports multiple calendars across time zones, recurring events, and CSV/iCal export. 60+ unit tests, 90%+ coverage.</p>
+                <p class="project-description-detailed">Multi-mode calendar app in Java supporting multiple time zones, recurring events, and three execution modes: GUI, interactive CLI, and headless scripting — all from a single codebase.</p>
                 <div class="project-features">
                   <h4>Key Highlights</h4>
                   <ul>
-                    <li>Clean MVC separation</li>
-                    <li>Three interfaces, one codebase</li>
-                    <li>Time zone &amp; recurring event support</li>
+                    <li>OOP design patterns and MVC architecture for scheduling algorithms across time zones and recurrence</li>
+                    <li>90%+ code coverage with 60+ JUnit tests written via TDD</li>
+                    <li>Optimized data structures across all three execution modes</li>
                     <li>Handles 10,000+ records efficiently</li>
                   </ul>
                 </div>
@@ -322,7 +321,7 @@
             <!-- StreamVault -->
             <article class="project-card-detailed" data-category="data">
               <div class="project-image-container">
-                <img src="../images/project4.jpg" alt="StreamVault data warehouse" class="project-image-detailed" loading="lazy" />
+                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #001a33 0%, #003366 60%, #004080 100%)"><span>StreamVault</span></div>
                 <div class="project-overlay">
                   <div class="project-links">
                     <a href="https://github.com/kanadmotiwale/StreamVault" target="_blank" class="project-link-btn">GitHub</a>
@@ -355,7 +354,7 @@
             <!-- DineMetrics -->
             <article class="project-card-detailed" data-category="data">
               <div class="project-image-container">
-                <img src="../images/project2.jpg" alt="DineMetrics restaurant data engineering" class="project-image-detailed" loading="lazy" />
+                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #2d1200 0%, #5c2800 60%, #7a3500 100%)"><span>DineMetrics</span></div>
                 <div class="project-overlay">
                   <div class="project-links">
                     <a href="https://github.com/kanadmotiwale/Dine-Metrics" target="_blank" class="project-link-btn">GitHub</a>
@@ -388,7 +387,7 @@
             <!-- Gate Control -->
             <article class="project-card-detailed" data-category="fullstack web">
               <div class="project-image-container">
-                <img src="../images/project4.jpg" alt="Gate Control System" class="project-image-detailed" loading="lazy" />
+                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 60%, #404040 100%)"><span>License Plate<br>Recognition System</span></div>
                 <div class="project-overlay">
                   <div class="project-links">
                     <a href="https://github.com/kanadmotiwale" class="project-link-btn">GitHub</a>
@@ -419,7 +418,7 @@
             <!-- Job Portal Monitor -->
             <article class="project-card-detailed" data-category="automation backend">
               <div class="project-image-container">
-                <img src="../images/project3.png" alt="Job Portal Monitor automation script" class="project-image-detailed" loading="lazy" />
+                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1a0033 0%, #2d0052 60%, #3d006b 100%)"><span>Job Portal Monitor</span></div>
                 <div class="project-overlay">
                   <div class="project-links">
                     <a href="https://github.com/kanadmotiwale/workday-monitor" target="_blank" class="project-link-btn">GitHub</a>
@@ -570,7 +569,75 @@
       </div>
     </footer>
 
+    <!-- PROJECT MODAL -->
+    <div class="project-modal-overlay" id="projectModal" role="dialog" aria-modal="true">
+      <div class="project-modal">
+        <div class="modal-header" id="modalHeader"></div>
+        <div class="modal-body">
+          <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-description" id="modalDesc"></p>
+          <div class="modal-features" id="modalFeatures"></div>
+          <div class="modal-tech" id="modalTech"></div>
+          <div class="modal-links" id="modalLinks"></div>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="../js/main.js"></script>
     <script type="module" src="../js/github.js"></script>
+    <script>
+      const overlay = document.getElementById("projectModal");
+      const modalClose = document.getElementById("modalClose");
+
+      document.querySelectorAll(".project-card-detailed").forEach((card) => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return; // let actual links work normally
+
+          const title = card.querySelector(".project-title-detailed")?.textContent || "";
+          const desc = card.querySelector(".project-description-detailed")?.textContent || "";
+          const featuresEl = card.querySelector(".project-features ul");
+          const techEls = card.querySelectorAll(".project-tech-detailed .tech-tag");
+          const linkEls = card.querySelectorAll(".project-links a");
+          const imgEl = card.querySelector(".project-image-container img");
+          const placeholderEl = card.querySelector(".project-img-placeholder");
+
+          document.getElementById("modalTitle").textContent = title;
+          document.getElementById("modalDesc").textContent = desc;
+
+          const header = document.getElementById("modalHeader");
+          if (imgEl) {
+            header.innerHTML = `<img src="${imgEl.src}" alt="${imgEl.alt}" style="width:100%;height:100%;object-fit:cover">`;
+          } else if (placeholderEl) {
+            header.innerHTML = placeholderEl.outerHTML;
+          }
+
+          const featuresDiv = document.getElementById("modalFeatures");
+          if (featuresEl) {
+            featuresDiv.innerHTML = `<h4>Key Highlights</h4><ul>${[...featuresEl.querySelectorAll("li")].map(li => `<li>${li.textContent}</li>`).join("")}</ul>`;
+          } else {
+            featuresDiv.innerHTML = "";
+          }
+
+          document.getElementById("modalTech").innerHTML = [...techEls].map(t => `<span class="tech-tag">${t.textContent}</span>`).join("");
+
+          document.getElementById("modalLinks").innerHTML = [...linkEls].map(a =>
+            `<a href="${a.href}" target="_blank" class="btn btn-outline-blue" style="font-size:0.85rem;padding:0.55rem 1.1rem">${a.textContent}</a>`
+          ).join("");
+
+          overlay.classList.add("open");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      function closeModal() {
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      modalClose.addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+    </script>
   </body>
 </html>
