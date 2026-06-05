@@ -142,7 +142,9 @@ export const theme = {
   },
 
   set(themeName) {
-    document.body.className = document.body.className.replace(/theme-\w+/, "");
+    document.body.classList.forEach((cls) => {
+      if (cls.endsWith("-theme")) document.body.classList.remove(cls);
+    });
     document.body.classList.add(`${themeName}-theme`);
     storage.set("preferred-theme", themeName);
   },

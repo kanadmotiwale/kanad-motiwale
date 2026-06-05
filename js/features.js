@@ -18,7 +18,7 @@ export function animateSkillBars() {
       setTimeout(() => {
         bar.style.width = `${skillLevel}%`;
 
-        const percentageElement = skillItem.querySelector(".skill-percent");
+        const percentageElement = skillItem && skillItem.querySelector(".skill-percent");
         if (percentageElement) {
           animateNumber(percentageElement, 0, parseInt(skillLevel, 10), 1500);
         }

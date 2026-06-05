@@ -111,6 +111,61 @@
         </div>
       </section>
 
+      <!-- SCHEDULE MEETING -->
+      <section class="schedule-section">
+        <div class="container">
+          <div class="schedule-card">
+            <h2 class="schedule-title">Schedule a Meeting</h2>
+            <p class="schedule-subtitle">Pick a date and time — I'll get a Google Calendar invite.</p>
+            <form class="schedule-form" id="scheduleForm">
+              <div class="schedule-row">
+                <div>
+                  <label class="schedule-label" for="meetDate">Date</label>
+                  <input type="date" id="meetDate" class="schedule-input" required />
+                </div>
+                <div>
+                  <label class="schedule-label" for="meetTime">Time (EST)</label>
+                  <select id="meetTime" class="schedule-select" required>
+                    <option value="" disabled selected>Select time</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                    <option value="17:00">5:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              <div class="schedule-row">
+                <div>
+                  <label class="schedule-label" for="meetDuration">Duration</label>
+                  <select id="meetDuration" class="schedule-select">
+                    <option value="30">30 minutes</option>
+                    <option value="60" selected>1 hour</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="schedule-label" for="meetPurpose">Purpose</label>
+                  <select id="meetPurpose" class="schedule-select">
+                    <option value="Job Opportunity">Job Opportunity</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Project Collaboration">Collaboration</option>
+                    <option value="General Chat">General Chat</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="schedule-label" for="meetEmail">Your Email (added as guest)</label>
+                <input type="email" id="meetEmail" class="schedule-input" placeholder="you@example.com" required />
+              </div>
+              <button type="submit" class="schedule-btn">Open in Google Calendar</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="footer">
@@ -128,5 +183,37 @@
     </footer>
 
     <script type="module" src="../js/main.js"></script>
+    <script>
+      document.getElementById("scheduleForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const date = document.getElementById("meetDate").value;
+        const time = document.getElementById("meetTime").value;
+        const duration = parseInt(document.getElementById("meetDuration").value);
+        const purpose = document.getElementById("meetPurpose").value;
+        const guestEmail = document.getElementById("meetEmail").value;
+
+        if (!date || !time || !guestEmail) return;
+
+        const [year, month, day] = date.split("-").map(Number);
+        const [hour, minute] = time.split(":").map(Number);
+
+        const pad = (n) => String(n).padStart(2, "0");
+        const startStr = `${year}${pad(month)}${pad(day)}T${pad(hour)}${pad(minute)}00`;
+
+        const endDate = new Date(year, month - 1, day, hour, minute + duration);
+        const endStr = `${endDate.getFullYear()}${pad(endDate.getMonth() + 1)}${pad(endDate.getDate())}T${pad(endDate.getHours())}${pad(endDate.getMinutes())}00`;
+
+        const title = encodeURIComponent(`${purpose} — Kanad Motiwale`);
+        const details = encodeURIComponent(`Scheduled via kanadmotiwale.github.io\n\nLooking forward to connecting!`);
+        const guests = encodeURIComponent(`motiwale.k@northeastern.edu,${guestEmail}`);
+
+        const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startStr}/${endStr}&details=${details}&add=${guests}`;
+        window.open(url, "_blank");
+      });
+
+      // Set min date to today
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("meetDate").setAttribute("min", today);
+    </script>
   </body>
 </html>

@@ -22,7 +22,7 @@ function initializeNavigation() {
   navLinks.forEach((link) => {
     const linkPath = link.getAttribute("href");
 
-    if (linkPath.startsWith("#")) {
+    if (linkPath && linkPath.startsWith("#")) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         const targetElement = document.getElementById(linkPath.substring(1));
@@ -121,12 +121,18 @@ function initializeFormHandling() {
       e.preventDefault();
 
       const formData = new FormData(form);
-      for (const [, value] of formData.entries()) {
-        if (!value.trim()) return;
-      }
-
       const btn = form.querySelector('button[type="submit"]');
       const success = form.querySelector(".form-success");
+
+      let hasEmpty = false;
+      for (const [, value] of formData.entries()) {
+        if (!value.trim()) { hasEmpty = true; break; }
+      }
+      if (hasEmpty) {
+        btn.textContent = "Please fill in all fields";
+        setTimeout(() => { btn.textContent = "Send Message"; }, 2000);
+        return;
+      }
       btn.textContent = "Sending...";
       btn.disabled = true;
 

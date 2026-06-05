@@ -1269,6 +1269,90 @@ h1, h2, h3, h4 {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ─── GITHUB CHART ──────────────────────────────── */
+.github-section { background: var(--off-white); }
+.github-chart-wrapper {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+.github-chart { width: 100%; max-width: 900px; height: auto; display: inline-block; }
+.github-chart-cta { text-align: center; margin-top: 1.5rem; }
+
+/* ─── SCHEDULE MEETING ───────────────────────────── */
+.schedule-section { padding: 4rem 0; background: var(--off-white); }
+.schedule-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  max-width: 620px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-sm);
+}
+.schedule-title { font-size: 1.5rem; margin-bottom: 0.4rem; }
+.schedule-subtitle { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.75rem; }
+.schedule-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.schedule-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.schedule-label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-dark); letter-spacing: 0.03em; text-transform: uppercase; }
+.schedule-input, .schedule-select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: var(--white);
+  color: var(--text-body);
+  transition: border-color 0.2s;
+}
+.schedule-input:focus, .schedule-select:focus { outline: none; border-color: var(--text-dark); }
+.schedule-btn {
+  background: var(--text-dark);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  transition: opacity 0.2s;
+  margin-top: 0.25rem;
+}
+.schedule-btn:hover { opacity: 0.85; }
+
+/* ─── GITHUB REPOS ───────────────────────────────── */
+.github-repos-section { padding: 5rem 0; }
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.repo-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.repo-card:hover { border-color: var(--text-dark); box-shadow: var(--shadow-sm); }
+.repo-name { font-weight: 700; font-size: 0.95rem; }
+.repo-name a { color: var(--text-dark); text-decoration: none; }
+.repo-name a:hover { text-decoration: underline; }
+.repo-desc { font-size: 0.85rem; color: var(--text-muted); flex: 1; line-height: 1.55; }
+.repo-meta { display: flex; gap: 0.9rem; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; align-items: center; flex-wrap: wrap; }
+.repo-lang::before { content: "●"; margin-right: 0.3rem; color: var(--lang-color, #8b8b8b); }
+.repos-loading, .repos-error { color: var(--text-muted); padding: 2rem; font-size: 0.92rem; }
+.repos-error a { color: var(--text-dark); }
+
 /* ─── RESPONSIVE ────────────────────────────────── */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; text-align: center; }
@@ -1276,6 +1360,10 @@ h1, h2, h3, h4 {
   .hero-actions { justify-content: center; }
   .about-grid, .about-content-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .projects-grid-detailed { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .repos-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -1305,6 +1393,7 @@ h1, h2, h3, h4 {
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; text-align: center; }
   .tech-categories { grid-template-columns: 1fr; }
+  .schedule-row { grid-template-columns: 1fr; }
   .blog-tiles { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1314,5 +1403,6 @@ h1, h2, h3, h4 {
   .section { padding: 3.5rem 0; }
   .profile-image { width: 175px; height: 175px; }
   .contact-form-wrapper { padding: 1.5rem; }
+  .repos-grid { grid-template-columns: 1fr; }
   .blog-tiles { grid-template-columns: 1fr; }
 }
