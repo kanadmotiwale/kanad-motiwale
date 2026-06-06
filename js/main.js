@@ -21,41 +21,100 @@ async function loadContributionChart() {
   const wrapper = document.querySelector(".github-chart-wrapper");
   if (!wrapper) return;
 
+  wrapper.innerHTML = `<p style="color:var(--text-muted);font-size:0.85rem;text-align:center;padding:1rem">Loading contributions…</p>`;
+
   try {
-    const res = await fetch("https://ghchart.rshah.org/kanadmotiwale");
-    const svgText = await res.text();
-
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(svgText, "image/svg+xml");
-    const svg = doc.querySelector("svg");
-    if (!svg) throw new Error("No SVG found");
-
-    // Turn every contribution square into a circle
-    svg.querySelectorAll("rect").forEach((rect) => {
-      const w = parseFloat(rect.getAttribute("width") || "0");
-      if (w > 0 && w < 20) {
-        const r = (w / 2).toFixed(1);
-        rect.setAttribute("rx", r);
-        rect.setAttribute("ry", r);
-      }
-    });
-
-    svg.setAttribute("width", "100%");
-    svg.removeAttribute("height");
-    svg.style.display = "block";
-    svg.classList.add("github-chart");
-
+    const res = await fetch("https://github-contributions-api.jogruber.de/v4/kanadmotiwale?y=last");
+    if (!res.ok) throw new Error("API error");
+    const data = await res.json();
     wrapper.innerHTML = "";
-    wrapper.appendChild(svg);
+    wrapper.appendChild(buildContributionSVG(data.contributions));
   } catch {
-    // fallback: keep the img tag if fetch fails (e.g. CORS)
-    const img = document.createElement("img");
-    img.src = "https://ghchart.rshah.org/kanadmotiwale";
-    img.alt = "GitHub contribution chart";
-    img.className = "github-chart";
-    wrapper.innerHTML = "";
-    wrapper.appendChild(img);
+    wrapper.innerHTML = `<p style="color:var(--text-muted);font-size:0.85rem;text-align:center;padding:1rem">Could not load contribution data.</p>`;
   }
+}
+
+function buildContributionSVG(contributions) {
+  const CELL = 11;
+  const GAP  = 3;
+  const STEP = CELL + GAP;
+  const TOP  = 22;   // month labels
+  const LEFT = 30;   // day labels
+
+  // Light-mode blues, dark-mode blues injected via CSS
+  const LIGHT = ["#ebedf0", "#9ecae1", "#6baed6", "#3182bd", "#08519c"];
+
+  // Group into Sun-based weeks
+  const weeks = [];
+  let week = [];
+  const firstDay = new Date(contributions[0].date + "T00:00:00").getDay();
+  for (let i = 0; i < firstDay; i++) week.push(null);
+
+  for (const c of contributions) {
+    const dow = new Date(c.date + "T00:00:00").getDay();
+    if (dow === 0 && week.length) { weeks.push(week); week = []; }
+    week.push(c);
+  }
+  if (week.length) weeks.push(week);
+
+  const W = LEFT + weeks.length * STEP;
+  const H = TOP  + 7 * STEP;
+
+  // Month labels
+  const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  let monthParts = "";
+  let lastMonth  = -1;
+  weeks.forEach((wk, wi) => {
+    const first = wk.find(Boolean);
+    if (!first) return;
+    const m = new Date(first.date + "T00:00:00").getMonth();
+    if (m !== lastMonth) {
+      monthParts += `<text x="${LEFT + wi * STEP}" y="${TOP - 6}" font-size="10" fill="var(--text-muted)" font-family="sans-serif">${MONTHS[m]}</text>`;
+      lastMonth = m;
+    }
+  });
+
+  // Day labels (Mon, Wed, Fri)
+  const DAY_LABELS = ["","Mon","","Wed","","Fri",""];
+  let dayParts = "";
+  DAY_LABELS.forEach((label, i) => {
+    if (label) dayParts += `<text x="${LEFT - 4}" y="${TOP + i * STEP + CELL - 2}" font-size="9" fill="var(--text-muted)" text-anchor="end" font-family="sans-serif">${label}</text>`;
+  });
+
+  // Circles
+  let circleParts = "";
+  weeks.forEach((wk, wi) => {
+    wk.forEach((day, di) => {
+      if (!day) return;
+      const cx = LEFT + wi * STEP + CELL / 2;
+      const cy = TOP  + di * STEP + CELL / 2;
+      const r  = CELL / 2;
+      const fill = LIGHT[day.level] || LIGHT[0];
+      circleParts += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" class="cb cb-${day.level}"><title>${day.count} contribution${day.count !== 1 ? "s" : ""} on ${day.date}</title></circle>`;
+    });
+  });
+
+  // Inject dark-mode colors once
+  if (!document.getElementById("cb-styles")) {
+    const s = document.createElement("style");
+    s.id = "cb-styles";
+    s.textContent = `
+      body.dark-theme .cb-0 { fill: #161b22; }
+      body.dark-theme .cb-1 { fill: #0d2149; }
+      body.dark-theme .cb-2 { fill: #0d419d; }
+      body.dark-theme .cb-3 { fill: #1a7fe8; }
+      body.dark-theme .cb-4 { fill: #58a6ff; }
+    `;
+    document.head.appendChild(s);
+  }
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("width", "100%");
+  svg.style.display = "block";
+  svg.classList.add("github-chart");
+  svg.innerHTML = monthParts + dayParts + circleParts;
+  return svg;
 }
 
 function initializeThemeToggle() {
