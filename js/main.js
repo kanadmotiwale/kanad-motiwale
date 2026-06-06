@@ -10,11 +10,53 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeScrollEffects();
   initializeEntryAnimations();
   initializeThemeToggle();
+  loadContributionChart();
 
   if (document.querySelector("form")) {
     initializeFormHandling();
   }
 });
+
+async function loadContributionChart() {
+  const wrapper = document.querySelector(".github-chart-wrapper");
+  if (!wrapper) return;
+
+  try {
+    const res = await fetch("https://ghchart.rshah.org/kanadmotiwale");
+    const svgText = await res.text();
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgText, "image/svg+xml");
+    const svg = doc.querySelector("svg");
+    if (!svg) throw new Error("No SVG found");
+
+    // Turn every contribution square into a circle
+    svg.querySelectorAll("rect").forEach((rect) => {
+      const w = parseFloat(rect.getAttribute("width") || "0");
+      if (w > 0 && w < 20) {
+        const r = (w / 2).toFixed(1);
+        rect.setAttribute("rx", r);
+        rect.setAttribute("ry", r);
+      }
+    });
+
+    svg.setAttribute("width", "100%");
+    svg.removeAttribute("height");
+    svg.style.display = "block";
+    svg.classList.add("github-chart");
+
+    wrapper.innerHTML = "";
+    wrapper.appendChild(svg);
+  } catch {
+    // fallback: keep the img tag if fetch fails (e.g. CORS)
+    const img = document.createElement("img");
+    img.src = "https://ghchart.rshah.org/kanadmotiwale";
+    img.alt = "GitHub contribution chart";
+    img.className = "github-chart";
+    wrapper.innerHTML = "";
+    wrapper.appendChild(img);
+  }
+}
 
 function initializeThemeToggle() {
   const btn = document.getElementById("themeToggle");
@@ -32,10 +74,10 @@ function initializeThemeToggle() {
 function applyTheme(theme, btn) {
   if (theme === "dark") {
     document.body.classList.add("dark-theme");
-    btn.textContent = "☀️";
+    btn.textContent = "○";
   } else {
     document.body.classList.remove("dark-theme");
-    btn.textContent = "🌙";
+    btn.textContent = "●";
   }
   localStorage.setItem("preferred-theme", theme);
 }

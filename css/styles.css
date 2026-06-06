@@ -90,15 +90,18 @@ h1, h2, h3, h4 {
   width: 2.1rem;
   height: 2.1rem;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
   flex-shrink: 0;
   color: var(--text-dark);
+  font-family: 'DM Sans', sans-serif;
 }
 .theme-toggle:hover { background: var(--light-grey); }
+.theme-toggle { filter: grayscale(1) brightness(0.4); }
+body.dark-theme .theme-toggle { filter: grayscale(1) brightness(2); }
 
 /* ─── DARK THEME ────────────────────────────────── */
 body.dark-theme {
@@ -131,6 +134,8 @@ body.dark-theme .schedule-select { background: #0f172a; color: var(--text-body);
 body.dark-theme .repo-card { background: #1e293b; }
 body.dark-theme .github-chart-wrapper { background: #1e293b; }
 body.dark-theme .contact-form-wrapper { background: #1e293b; }
+body.dark-theme .github-chart,
+body.dark-theme .github-chart-wrapper svg { filter: hue-rotate(120deg) saturate(1.3) brightness(0.85); }
 
 .nav-menu {
   display: flex;
