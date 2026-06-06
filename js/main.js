@@ -110,8 +110,11 @@ function buildContributionSVG(contributions) {
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  svg.setAttribute("width", "100%");
+  svg.setAttribute("width", W);
+  svg.setAttribute("height", H);
+  svg.style.maxWidth = "100%";
   svg.style.display = "block";
+  svg.style.margin = "0 auto";
   svg.classList.add("github-chart");
   svg.innerHTML = monthParts + dayParts + circleParts;
   return svg;

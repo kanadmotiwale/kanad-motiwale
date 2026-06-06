@@ -1415,10 +1415,12 @@ body.dark-theme .contact-form-wrapper { background: #1e293b; }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  text-align: center;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.github-chart { width: 100%; max-width: 900px; height: auto; display: inline-block; }
+.github-chart { width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto; }
 .github-chart-cta { text-align: center; margin-top: 1.5rem; }
 
 /* ─── RESUME EMBED ───────────────────────────────── */
