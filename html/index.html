@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Kanad Motiwale" />
     <meta name="description" content="Kanad Motiwale - Software Engineer and Graduate CS Student at Northeastern University" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kanadmotiwale.github.io/kanad-motiwale/html/index.html" />
+    <meta property="og:title" content="Kanad Motiwale — Software Engineer" />
+    <meta property="og:description" content="MS Computer Science at Northeastern. Backend systems, cloud architecture, and AI. Previously software engineer at LTIMindtree." />
+    <meta property="og:image" content="https://kanadmotiwale.github.io/kanad-motiwale/images/profile.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kanad Motiwale — Software Engineer" />
+    <meta name="twitter:description" content="MS Computer Science at Northeastern. Backend systems, cloud architecture, and AI." />
+    <meta name="twitter:image" content="https://kanadmotiwale.github.io/kanad-motiwale/images/profile.png" />
+    <!-- Anti-flash theme -->
+    <script>if(localStorage.getItem('preferred-theme')==='dark')document.body.classList.add('dark-theme');</script>
+    <!-- Google Analytics (replace G-XXXXXXXXXX with your Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
     <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
     <title>Kanad Motiwale - Software Engineer</title>
     <link rel="stylesheet" href="../css/styles.css?v=3" />
@@ -33,6 +48,7 @@
       <section id="home" class="hero-section">
         <div class="hero-inner">
           <div class="hero-text">
+            <div class="hero-availability"><span class="availability-dot"></span>Open to work · SWE / SDE / AI roles</div>
             <p class="hero-eyebrow">Full-Stack Engineer &amp; AI Researcher</p>
             <h1 class="hero-title">Kanad Motiwale</h1>
             <p class="hero-subtitle">Full-Stack Development · AI Applications · Production-Grade Systems</p>
@@ -44,6 +60,7 @@
             <div class="hero-actions">
               <a href="projects.html" class="btn btn-primary">View My Work</a>
               <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+              <a href="../images/Kanad_Motiwale_Resume.pdf" download class="btn btn-outline">Resume ↓</a>
             </div>
           </div>
           <div class="hero-photo">
@@ -83,52 +100,96 @@
             <span class="section-label">Technical Expertise</span>
             <h2 class="section-title">What I Work With</h2>
           </div>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <h3 class="skill-name">Python &amp; FastAPI</h3>
-              <div class="skill-bar"><div class="skill-progress" data-skill="92"></div></div>
-              <span class="skill-percent">92%</span>
+          <div class="skills-tag-grid">
+            <div class="skill-group">
+              <p class="skill-group-label">Languages</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">TypeScript</span><span class="skill-tag">JavaScript</span><span class="skill-tag">SQL</span><span class="skill-tag">R</span>
+              </div>
             </div>
-            <div class="skill-item">
-              <h3 class="skill-name">JavaScript &amp; TypeScript</h3>
-              <div class="skill-bar"><div class="skill-progress" data-skill="90"></div></div>
-              <span class="skill-percent">90%</span>
+            <div class="skill-group">
+              <p class="skill-group-label">Backend &amp; APIs</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Node.js</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Express</span><span class="skill-tag">REST APIs</span><span class="skill-tag">Microservices</span>
+              </div>
             </div>
-            <div class="skill-item">
-              <h3 class="skill-name">Java &amp; Spring Boot</h3>
-              <div class="skill-bar"><div class="skill-progress" data-skill="85"></div></div>
-              <span class="skill-percent">85%</span>
+            <div class="skill-group">
+              <p class="skill-group-label">Databases &amp; Cloud</p>
+              <div class="skill-tags">
+                <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">MySQL</span><span class="skill-tag">AWS</span><span class="skill-tag">Docker</span><span class="skill-tag">Redis</span>
+              </div>
             </div>
-            <div class="skill-item">
-              <h3 class="skill-name">AI / ML (RAG, LLMs, Agentic AI)</h3>
-              <div class="skill-bar"><div class="skill-progress" data-skill="85"></div></div>
-              <span class="skill-percent">85%</span>
+            <div class="skill-group">
+              <p class="skill-group-label">AI &amp; ML</p>
+              <div class="skill-tags">
+                <span class="skill-tag">RAG Systems</span><span class="skill-tag">FAISS</span><span class="skill-tag">Ollama</span><span class="skill-tag">Pydantic AI</span><span class="skill-tag">Groq API</span><span class="skill-tag">OpenCV</span>
+              </div>
             </div>
-            <div class="skill-item">
-              <h3 class="skill-name">Cloud &amp; DevOps (AWS, Docker, CI/CD)</h3>
-              <div class="skill-bar"><div class="skill-progress" data-skill="80"></div></div>
-              <span class="skill-percent">80%</span>
-            </div>
-            <div class="skill-item">
-              <h3 class="skill-name">Databases &amp; Data Engineering</h3>
-              <div class="skill-bar"><div class="skill-progress" data-skill="85"></div></div>
-              <span class="skill-percent">85%</span>
+            <div class="skill-group">
+              <p class="skill-group-label">Frontend &amp; Tools</p>
+              <div class="skill-tags">
+                <span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">Angular</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">Git</span><span class="skill-tag">CI/CD</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- GITHUB ACTIVITY -->
-      <section id="github" class="github-section section">
+      <!-- FEATURED PROJECTS -->
+      <section class="featured-projects">
         <div class="container">
           <div class="section-header">
-            <span class="section-label">Open Source</span>
-            <h2 class="section-title">GitHub Activity</h2>
+            <span class="section-label">Selected Work</span>
+            <h2 class="section-title">Featured Projects</h2>
+          </div>
+          <div class="featured-grid">
+            <div class="featured-card">
+              <div class="featured-card-tags">
+                <span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">React</span><span class="tech-tag">Groq AI</span>
+              </div>
+              <h3 class="featured-card-title">CodeBlood</h3>
+              <p class="featured-card-desc">Analyzes your GitHub commit history to build a behavioral developer profile. Detects panic commits, grades productivity A–F, and generates an AI personality archetype via Groq (Llama 3.3).</p>
+              <div class="featured-card-footer">
+                <a href="https://code-blood.vercel.app" target="_blank" class="featured-card-link">Live Demo →</a>
+                <a href="https://github.com/kanadmotiwale" target="_blank" class="featured-card-link">GitHub</a>
+              </div>
+            </div>
+            <div class="featured-card">
+              <div class="featured-card-tags">
+                <span class="tech-tag">Next.js 16</span><span class="tech-tag">TypeScript</span><span class="tech-tag">GPT-4o</span><span class="tech-tag">Upstash Redis</span>
+              </div>
+              <h3 class="featured-card-title">HUMAID Platform</h3>
+              <p class="featured-card-desc">Research platform studying human interaction with multi-agent AI. Participants complete a literature review in collaborative or competitive mode; every interaction is logged for researcher analysis.</p>
+              <div class="featured-card-footer">
+                <a href="https://humaidplatform.vercel.app" target="_blank" class="featured-card-link">Live Demo →</a>
+                <a href="https://github.com/kanadmotiwale/humaidplatform" target="_blank" class="featured-card-link">GitHub</a>
+              </div>
+            </div>
+            <div class="featured-card">
+              <div class="featured-card-tags">
+                <span class="tech-tag">FastAPI</span><span class="tech-tag">FAISS</span><span class="tech-tag">Ollama</span><span class="tech-tag">Pydantic AI</span>
+              </div>
+              <h3 class="featured-card-title">Lexorion</h3>
+              <p class="featured-card-desc">Local RAG knowledge assistant — upload documents and have real conversations with them. Full pipeline: parse → chunk → embed → retrieve → generate, with source citations. No cloud AI costs.</p>
+              <div class="featured-card-footer">
+                <a href="https://github.com/kanadmotiwale" target="_blank" class="featured-card-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="featured-view-all">
+            <a href="projects.html" class="btn btn-outline">View All Projects →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- GITHUB ACTIVITY -->
+      <section class="github-activity section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">GitHub Activity</span>
+            <h2 class="section-title">Contribution Graph</h2>
           </div>
           <div class="github-chart-wrapper"></div>
-          <div class="github-chart-cta">
-            <a href="https://github.com/kanadmotiwale" target="_blank" class="btn btn-outline-blue">View GitHub Profile</a>
-          </div>
         </div>
       </section>
 

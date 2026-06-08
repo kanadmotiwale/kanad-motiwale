@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Kanad Motiwale" />
     <meta name="description" content="Portfolio of projects by Kanad Motiwale" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kanadmotiwale.github.io/kanad-motiwale/html/projects.html" />
+    <meta property="og:title" content="Projects — Kanad Motiwale" />
+    <meta property="og:description" content="Portfolio of projects spanning backend systems, AI, full-stack web apps, and data engineering." />
+    <meta property="og:image" content="https://kanadmotiwale.github.io/kanad-motiwale/images/profile.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>if(localStorage.getItem('preferred-theme')==='dark')document.body.classList.add('dark-theme');</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
     <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
     <title>Projects - Kanad Motiwale</title>
     <link rel="stylesheet" href="../css/styles.css?v=3" />
@@ -52,6 +61,40 @@
       <section class="projects-gallery">
         <div class="container">
           <div class="projects-grid-detailed">
+
+            <!-- HUMAID Platform -->
+            <article class="project-card-detailed" data-category="web fullstack backend">
+              <div class="project-image-container">
+                <img src="../images/project3.png" alt="HUMAID research platform" class="project-image-detailed" loading="lazy" />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://github.com/kanadmotiwale/humaidplatform" target="_blank" class="project-link-btn">GitHub</a>
+                    <a href="https://humaidplatform.vercel.app" target="_blank" class="project-link-btn">Live Demo</a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content-detailed">
+                <h3 class="project-title-detailed">HUMAID Platform</h3>
+                <p class="project-description-detailed">Research platform studying human interaction with multi-agent AI across collaborative and competitive task modes. Every interaction is logged — dwell time, scroll depth, edit provenance, and survey data — and surfaced in a password-protected admin dashboard with CSV export.</p>
+                <div class="project-features">
+                  <h4>Key Highlights</h4>
+                  <ul>
+                    <li>Collaborative mode: sequential 3-agent pipeline (keywords → papers → summary)</li>
+                    <li>Competitive mode: 3 parallel GPT-4o agents with different styles</li>
+                    <li>Session logging: event stream, provenance analysis, survey data</li>
+                    <li>Admin dashboard with full CSV export; deployed on Vercel</li>
+                  </ul>
+                </div>
+                <div class="project-tech-detailed">
+                  <span class="tech-tag">Next.js 16</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">GPT-4o</span>
+                  <span class="tech-tag">Upstash Redis</span>
+                  <span class="tech-tag">Tailwind</span>
+                  <span class="tech-tag">Vercel</span>
+                </div>
+              </div>
+            </article>
 
             <!-- SponsorFlow -->
             <article class="project-card-detailed" data-category="web fullstack">

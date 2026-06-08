@@ -260,36 +260,56 @@ function initializeEntryAnimations() {
   });
 }
 
-function initializeFormHandling() {
+async function initializeFormHandling() {
   document.querySelectorAll("form").forEach((form) => {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-
-      const formData = new FormData(form);
       const btn = form.querySelector('button[type="submit"]');
       const success = form.querySelector(".form-success");
+      const formspreeId = form.dataset.formspree;
 
+      const formData = new FormData(form);
       let hasEmpty = false;
       for (const [, value] of formData.entries()) {
         if (!value.trim()) { hasEmpty = true; break; }
       }
       if (hasEmpty) {
+        const orig = btn.textContent;
         btn.textContent = "Please fill in all fields";
-        setTimeout(() => { btn.textContent = "Send Message"; }, 2000);
+        setTimeout(() => { btn.textContent = orig; }, 2000);
         return;
       }
-      btn.textContent = "Sending...";
+
+      btn.textContent = "Sending…";
       btn.disabled = true;
 
-      setTimeout(() => {
-        btn.textContent = "Send Message";
-        btn.disabled = false;
-        form.reset();
-        if (success) {
-          success.style.display = "block";
-          setTimeout(() => { success.style.display = "none"; }, 5000);
+      if (formspreeId && formspreeId !== "YOUR_FORM_ID") {
+        try {
+          const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+            method: "POST",
+            body: formData,
+            headers: { Accept: "application/json" },
+          });
+          if (res.ok) {
+            form.reset();
+            if (success) { success.style.display = "block"; setTimeout(() => { success.style.display = "none"; }, 6000); }
+            btn.textContent = "Message sent!";
+          } else {
+            btn.textContent = "Error — please email me directly";
+          }
+        } catch {
+          btn.textContent = "Error — please email me directly";
         }
-      }, 1000);
+        setTimeout(() => { btn.textContent = "Send Message"; btn.disabled = false; }, 3000);
+      } else {
+        // Formspree not yet configured — simulate for demo
+        setTimeout(() => {
+          form.reset();
+          if (success) { success.style.display = "block"; setTimeout(() => { success.style.display = "none"; }, 6000); }
+          btn.textContent = "Send Message";
+          btn.disabled = false;
+        }, 1000);
+      }
     });
   });
 }
