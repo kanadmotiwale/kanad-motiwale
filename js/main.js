@@ -128,7 +128,7 @@ function initializeThemeToggle() {
   applyTheme(saved, btn);
 
   btn.addEventListener("click", () => {
-    const isDark = document.body.classList.contains("dark-theme");
+    const isDark = document.documentElement.classList.contains("dark-theme");
     applyTheme(isDark ? "light" : "dark", btn);
   });
 }
@@ -151,10 +151,10 @@ const MOON_SVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 
 function applyTheme(theme, btn) {
   if (theme === "dark") {
-    document.body.classList.add("dark-theme");
+    document.documentElement.classList.add("dark-theme");
     btn.innerHTML = SUN_SVG;
   } else {
-    document.body.classList.remove("dark-theme");
+    document.documentElement.classList.remove("dark-theme");
     btn.innerHTML = MOON_SVG;
   }
   localStorage.setItem("preferred-theme", theme);

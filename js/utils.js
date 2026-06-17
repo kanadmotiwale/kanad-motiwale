@@ -341,7 +341,8 @@ export const perfUtils = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  theme.init();
+  // Theme is managed solely by initializeThemeToggle() in main.js to avoid
+  // conflicting writes to localStorage. Do not re-initialize it here.
 
   if (
     window.location.hostname === "localhost" ||

@@ -110,7 +110,7 @@ h1, h2, h3, h4 {
 }
 
 /* ─── DARK MODE ─────────────────────────────────── */
-body.dark-theme {
+html.dark-theme {
   --white:         #0f172a;
   --off-white:     #1e293b;
   --light-grey:    #1e293b;
@@ -128,18 +128,18 @@ body.dark-theme {
   --shadow-md:     0 4px 16px rgba(0,0,0,0.5);
   --shadow-lg:     0 12px 32px rgba(0,0,0,0.6);
 }
-body.dark-theme .header { background: var(--white); }
-body.dark-theme .nav-menu { background: var(--white); }
-body.dark-theme .blog-tile-header { background: #334155; }
-body.dark-theme .blog-tile-body { background: #1e293b; }
-body.dark-theme .project-modal { background: #1e293b; }
-body.dark-theme .schedule-card { background: #1e293b; }
-body.dark-theme .schedule-input,
-body.dark-theme .schedule-select { background: #0f172a; color: var(--text-body); border-color: var(--border); }
-body.dark-theme .repo-card { background: #1e293b; }
-body.dark-theme .github-chart-wrapper { background: #1e293b; }
-body.dark-theme .contact-form-wrapper { background: #1e293b; }
-body.dark-theme .form-success { background: #052e16; color: #bbf7d0; border-color: rgba(74,222,128,0.2); }
+html.dark-theme .header { background: var(--white); }
+html.dark-theme .nav-menu { background: var(--white); }
+html.dark-theme .blog-tile-header { background: #334155; }
+html.dark-theme .blog-tile-body { background: #1e293b; }
+html.dark-theme .project-modal { background: #1e293b; }
+html.dark-theme .schedule-card { background: #1e293b; }
+html.dark-theme .schedule-input,
+html.dark-theme .schedule-select { background: #0f172a; color: var(--text-body); border-color: var(--border); }
+html.dark-theme .repo-card { background: #1e293b; }
+html.dark-theme .github-chart-wrapper { background: #1e293b; }
+html.dark-theme .contact-form-wrapper { background: #1e293b; }
+html.dark-theme .form-success { background: #052e16; color: #bbf7d0; border-color: rgba(74,222,128,0.2); }
 
 .nav-menu {
   display: flex;
@@ -1122,7 +1122,38 @@ body.dark-theme .form-success { background: #052e16; color: #bbf7d0; border-colo
   align-items: start;
 }
 
-.contact-info h2 { font-size: 1.6rem; color: var(--text-dark); margin-bottom: 0.75rem; }
+.availability-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-body);
+  margin-bottom: 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.availability-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.5);
+  animation: availability-pulse 2s infinite;
+}
+
+@keyframes availability-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  70%  { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+.contact-info h2 { font-size: 1.7rem; color: var(--text-dark); margin-bottom: 0.75rem; }
 
 .contact-info p {
   font-size: 0.97rem;
@@ -1132,49 +1163,78 @@ body.dark-theme .form-success { background: #052e16; color: #bbf7d0; border-colo
   font-family: 'DM Sans', sans-serif;
 }
 
-.contact-details { list-style: none; margin-bottom: 2rem; }
+.contact-details {
+  list-style: none;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
-.contact-details li {
+.contact-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--light-grey);
-  font-size: 0.93rem;
-  color: var(--text-body);
+  gap: 0.9rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  text-decoration: none;
   transition: var(--transition);
+}
+
+a.contact-item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.contact-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
   font-family: 'DM Sans', sans-serif;
 }
 
-.contact-details li:hover { padding-left: 4px; }
-.contact-details li:last-child { border-bottom: none; }
-
-.contact-details a {
-  color: var(--text-dark);
-  text-decoration: none;
+.contact-value {
+  font-size: 0.95rem;
   font-weight: 500;
-  transition: var(--transition);
+  color: var(--text-dark);
+  font-family: 'DM Sans', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.contact-details a:hover { color: var(--accent); }
-
 .contact-icon {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   background: var(--accent-bg);
   border: 1px solid var(--accent-border);
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  color: var(--text-dark);
   flex-shrink: 0;
   transition: var(--transition);
 }
 
-.contact-details li:hover .contact-icon {
-  background: rgba(0,0,0,0.08);
+.contact-icon svg { width: 19px; height: 19px; }
+
+a.contact-item:hover .contact-icon {
+  background: var(--accent);
   border-color: var(--accent);
+  color: var(--white);
 }
 
 .resume-download {
@@ -1193,6 +1253,12 @@ body.dark-theme .form-success { background: #052e16; color: #bbf7d0; border-colo
   color: var(--text-muted);
   margin-bottom: 1rem;
   font-family: 'DM Sans', sans-serif;
+}
+
+.resume-download .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* ─── CONTACT FORM ──────────────────────────────── */
@@ -1543,7 +1609,7 @@ body.dark-theme .form-success { background: #052e16; color: #bbf7d0; border-colo
   0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
   50%       { box-shadow: 0 0 0 4px rgba(34,197,94,0); }
 }
-body.dark-theme .hero-availability { background: #052e16; color: #86efac; border-color: rgba(74,222,128,0.2); }
+html.dark-theme .hero-availability { background: #052e16; color: #86efac; border-color: rgba(74,222,128,0.2); }
 
 /* ─── SKILLS TAG GRID ───────────────────────────── */
 .skills-tag-grid {
