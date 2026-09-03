@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeScrollEffects();
   initializeEntryAnimations();
   initializeThemeToggle();
+  initializeUIPolish();
   loadContributionChart();
 
   if (document.querySelector("form")) {
@@ -158,6 +159,42 @@ function applyTheme(theme, btn) {
     btn.innerHTML = MOON_SVG;
   }
   localStorage.setItem("preferred-theme", theme);
+}
+
+function initializeUIPolish() {
+  // Scroll progress bar
+  const progress = document.createElement("div");
+  progress.className = "scroll-progress";
+  document.body.appendChild(progress);
+
+  // Back-to-top button
+  const backToTop = document.createElement("button");
+  backToTop.className = "back-to-top";
+  backToTop.setAttribute("aria-label", "Back to top");
+  backToTop.innerHTML =
+    '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>';
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  document.body.appendChild(backToTop);
+
+  let ticking = false;
+  const update = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progress.style.width = pct + "%";
+    backToTop.classList.toggle("visible", scrollTop > 400);
+    ticking = false;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  });
+  update();
 }
 
 function initializeNavigation() {

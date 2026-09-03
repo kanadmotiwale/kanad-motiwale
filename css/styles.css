@@ -1764,3 +1764,89 @@ html.dark-theme .hero-availability { background: #052e16; color: #86efac; border
   .repos-grid { grid-template-columns: 1fr; }
   .blog-tiles { grid-template-columns: 1fr; }
 }
+
+/* ─── UI POLISH ─────────────────────────────────── */
+
+/* Brand text selection */
+::selection { background: var(--text-dark); color: var(--white); }
+
+/* Themed scrollbar */
+html { scrollbar-color: var(--mid-grey) transparent; }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--mid-grey);
+  border-radius: 8px;
+  border: 3px solid var(--white);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Keyboard focus ring (accessibility) — only for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.skill-tag:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--text-dark);
+  z-index: 1100;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* Back-to-top button */
+.back-to-top {
+  position: fixed;
+  bottom: 1.75rem; right: 1.75rem;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--text-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 1090;
+}
+.back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg), 0 6px 18px rgba(0,0,0,0.18); }
+.back-to-top svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Micro-interactions */
+.skill-tag:hover { transform: translateY(-2px); }
+.profile-image { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+.profile-image:hover { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(0,0,0,0.05); }
+.social-link:hover { transform: translateY(-2px); }
+.nav-brand { transition: opacity 0.2s ease; }
+.nav-brand:hover { opacity: 0.75; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .back-to-top, .scroll-progress { transition: none; }
+}
+
+@media (max-width: 480px) {
+  .back-to-top { bottom: 1rem; right: 1rem; width: 40px; height: 40px; }
+}
