@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeEntryAnimations();
   initializeThemeToggle();
   initializeUIPolish();
+  updateFooterYear();
   loadContributionChart();
 
   if (document.querySelector("form")) {
@@ -159,6 +160,17 @@ function applyTheme(theme, btn) {
     btn.innerHTML = MOON_SVG;
   }
   localStorage.setItem("preferred-theme", theme);
+}
+
+function updateFooterYear() {
+  // Keep the footer copyright year current automatically.
+  const footerCopy = document.querySelector(".footer-copy");
+  if (footerCopy) {
+    footerCopy.textContent = footerCopy.textContent.replace(
+      /\b\d{4}\b/,
+      new Date().getFullYear(),
+    );
+  }
 }
 
 function initializeUIPolish() {
