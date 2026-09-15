@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeEntryAnimations();
   initializeThemeToggle();
   initializeUIPolish();
+  initializeReveal();
+  initializeStatCounters();
   updateFooterYear();
   loadContributionChart();
 
@@ -160,6 +162,86 @@ function applyTheme(theme, btn) {
     btn.innerHTML = MOON_SVG;
   }
   localStorage.setItem("preferred-theme", theme);
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function initializeReveal() {
+  const els = document.querySelectorAll("[data-reveal]");
+  if (!els.length) return;
+
+  if (prefersReducedMotion()) {
+    els.forEach((el) => el.classList.add("is-revealed"));
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+  );
+
+  els.forEach((el) => {
+    // Stagger siblings within the same group for a cascading effect.
+    const group = [...el.parentElement.children].filter((c) =>
+      c.hasAttribute("data-reveal"),
+    );
+    const idx = group.indexOf(el);
+    el.style.transitionDelay = `${Math.min(idx, 12) * 45}ms`;
+    io.observe(el);
+  });
+}
+
+function initializeStatCounters() {
+  const nums = document.querySelectorAll(".stat-number[data-count-to]");
+  if (!nums.length) return;
+
+  const reduce = prefersReducedMotion();
+
+  const run = (el) => {
+    const to = parseFloat(el.dataset.countTo);
+    const decimals = parseInt(el.dataset.decimals || "0", 10);
+    const suffix = el.dataset.suffix || "";
+    const format = (n) => n.toFixed(decimals) + suffix;
+
+    if (reduce) {
+      el.textContent = format(to);
+      return;
+    }
+
+    const duration = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = format(to * eased);
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = format(to);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          run(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 },
+  );
+
+  nums.forEach((n) => io.observe(n));
 }
 
 function updateFooterYear() {

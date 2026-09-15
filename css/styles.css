@@ -1850,3 +1850,55 @@ select:focus-visible,
 @media (max-width: 480px) {
   .back-to-top { bottom: 1rem; right: 1rem; width: 40px; height: 40px; }
 }
+
+/* ─── COURSEWORK CHIPS ──────────────────────────── */
+.coursework {
+  margin-top: 1.15rem;
+  padding-top: 1.15rem;
+  border-top: 1px dashed var(--border);
+}
+.coursework-label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+.course-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.course-chip {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-body);
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.32rem 0.75rem;
+  transition: transform 0.5s ease, opacity 0.5s ease, background 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease;
+}
+.course-chip:hover {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ─── SCROLL REVEAL ─────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.course-chip[data-reveal] { transform: translateY(12px) scale(0.96); }
+.course-chip[data-reveal].is-revealed { transform: translateY(0) scale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+}

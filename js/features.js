@@ -115,7 +115,7 @@ function createRippleEffect(event, element) {
     height: ${size}px;
     left: ${x}px;
     top: ${y}px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(120, 120, 120, 0.25) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     transform: scale(0);
@@ -243,7 +243,7 @@ export function initializeNavigationDots() {
 
     document.querySelectorAll(".nav-dot").forEach((dot) => {
       const isActive = dot.getAttribute("data-section") === activeSection;
-      dot.style.background = isActive ? "#2563eb" : "transparent";
+      dot.style.background = isActive ? "var(--text-dark)" : "transparent";
       dot.style.transform = isActive ? "scale(1.2)" : "scale(1)";
     });
   };
