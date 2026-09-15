@@ -1902,3 +1902,26 @@ select:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] { opacity: 1 !important; transform: none !important; }
 }
+
+/* ─── HERO SOCIAL LINKS ─────────────────────────── */
+.hero-socials { display: flex; gap: 0.6rem; margin-top: 1.6rem; }
+.hero-social {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.hero-social svg { width: 18px; height: 18px; }
+.hero-social:hover {
+  color: var(--white);
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
